@@ -1,5 +1,7 @@
 // import {Link} from 'react-router-dom';
 // import useForm from './useForm';
+import { Country, State, City }  from 'country-state-city';
+
 import validate from './validateInfo';
 // import Form from './styles/Form.css'
 import React from 'react';
@@ -48,9 +50,13 @@ const Register = () => { //{ submitFo handleSubmit, userData, setUserData, error
         // setValue,
         handleSubmit,
         formState: { errors },
+        reset,
 
     } = useForm();
 
+    const country = Country.getAllCountries()
+        .map((index) => console.log(index.name))
+        .flat();
     // const [userData, setUserData] = useState({
     //     //[allowedCountry],
     //     'first_name':'', 'last_name':'', 'email':'', 'country':'', 'address':'',
@@ -77,6 +83,8 @@ const Register = () => { //{ submitFo handleSubmit, userData, setUserData, error
     const onSubmit = userData => {
         // console.log("another info")
         console.log(userData);
+        console.log(Country.getAllCountries())
+
         // axios.get(baseUrl+'/tennisplayer/', ).then((response)=>{
         //     console.log(response.data);
         // });
@@ -186,18 +194,30 @@ const Register = () => { //{ submitFo handleSubmit, userData, setUserData, error
                                             // value={userData.email}
                                                name='email' type="email"
                                                className="form-control" id="inputEmail4"
-                                               {...register("email", {required: "Email is Required"})}/>
+                                               {...register("email", {
+                                                   required: "Email is Required",
+                                                   pattern: {
+                                                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                                       message: "Invalid email address",
+                                                   }
+                                               }
+                                               )}/>
                                         {/*<small className="text-danger">Email is Required</small>*/}
-                                        {errors.email && <small className="text-danger">{errors.email}</small>}
+                                        {errors.email && <small className="text-danger">{errors.email.message}</small>}
                                     </div>
 
                                     <div className="col-md-6">
                                         <label htmlFor="inputCountry" className="form-label">Country</label>
-                                        <input
-                                            // value={userData.country}
+                                        <select
                                                name='country' type="text"
                                                className="form-input form-control" id="inputCountry"
-                                               {...register("country", {required: "Country is Required"})}/>
+                                               {...register("country", {required: "Country is Required"})}>
+                                            {Country.getAllCountries()
+                                                .map((index) =>
+                                                    <option>{index.name}
+                                                    </option>
+                                                )}
+                                        </select>
                                         {/*<small className="text-danger">Country is Required</small>*/}
                                         {errors.country && (<small className="text-danger">{errors.country.message}</small>)}
 
@@ -225,8 +245,6 @@ const Register = () => { //{ submitFo handleSubmit, userData, setUserData, error
                                                id="inputAddress" placeholder="1234 Main St"
                                                {...register("address", {required: "Address is Required"})}/>
                                         {errors.address && (<small className="text-danger">{errors.address.message}</small>)}
-
-                                        {/*<small className="text-danger">Address is Required</small>*/}
                                     </div>
                                     <div className="col-12">
                                         <label htmlFor="inputAddress2" className="form-label">Address 2</label>
@@ -235,8 +253,6 @@ const Register = () => { //{ submitFo handleSubmit, userData, setUserData, error
                                                name='address_2' type="text" className="form-input form-control"
                                                id="inputAddress2"
                                                placeholder="Apartment, studio, or floor"/>
-                                        {errors.address_2 && (<small className="text-danger">{errors.address_2.message}</small>)}
-
                                     </div>
                                     <div className="col-md-6">
                                         <label htmlFor="inputMobileNumber" className="form-label">Mobile number</label>
@@ -244,8 +260,14 @@ const Register = () => { //{ submitFo handleSubmit, userData, setUserData, error
                                             // value={userData.mobile_no}
                                             name='mobile_no'  type="text" className="form-input form-control"
                                                id="inputMobileNumber"
-                                               {...register("mobile_no", {required: "Mobile Number is Required"})}/>
-                                        {/*<small className="text-danger">Mobile Number is Required</small>*/}
+                                               {...register("mobile_no", {
+                                                   required: "Mobile Number is Required",
+                                                   pattern: {
+                                                       value: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
+                                                       message: "Invalid mobile no",
+                                                   }
+                                               }
+                                               )}/>
                                         {errors.mobile_no && (<small className="text-danger">{errors.mobile_no.message}</small>)}
 
                                     </div>
@@ -267,7 +289,6 @@ const Register = () => { //{ submitFo handleSubmit, userData, setUserData, error
                                             name='city' type="text" className="form-input form-control"
                                                 id="inputCity"
                                                 {...register("city", {required: "City is Required"})}/>
-                                        {/*<small className="text-danger">City is Required</small>*/}
                                         {errors.city && (<small className="text-danger">{errors.city.message}</small>)}
 
                                     </div>
@@ -278,8 +299,7 @@ const Register = () => { //{ submitFo handleSubmit, userData, setUserData, error
                                             name='region' type="text" className="form-input form-control"
                                             id="inputRegion"
                                             {...register("region", {required: "Region is Required"})}/>
-                                        {/*<small className="text-danger">Region is Required</small>*/}
-                                        {errors.region && (<small className="text-danger">{errors.region.message}</small>)}
+                                        {/*{errors.region && (<small className="text-danger">{errors.region.message}</small>)}*/}
 
                                         {/*    <label htmlFor="inputRegion" className="form-label">Region</label>*/}
                                         {/*<select name='region' id="inputRegion" className="form-select">*/}
@@ -303,8 +323,21 @@ const Register = () => { //{ submitFo handleSubmit, userData, setUserData, error
                                             /*value={userData.age}*/
                                              name='age' type="text" className="form-input form-control"
                                             id="inputAge"
-                                            {...register("age", {required: "Age is Required"})}/>
-                                        {/*<small className="text-danger">Age is Required</small>*/}
+                                            {...register("age", {
+                                                required: "Age is Required",
+                                                min: {
+                                                    value: 15,
+                                                    message: "Minimum Required age is 15",
+                                                 },
+                                                max: {
+                                                    value: 65,
+                                                    message: "Maximum allowed age is 65",
+                                                },
+                                                pattern: {
+                                                    value: /^[0-9]*$/,
+                                                    message: "Only numbers are allowed"
+                                                }
+                                            })}/>
                                         {errors.age && (<small className="text-danger">{errors.age.message}</small>)}
 
 
@@ -333,13 +366,21 @@ const Register = () => { //{ submitFo handleSubmit, userData, setUserData, error
                                     </div>
                                     <div className="col-md-6">
                                         <label htmlFor="inputSkillLevel" className="form-label">Skill Level</label>
-                                        <input
+                                        <select
                                             /*value={userData.skill_level}*/
                                              name='skill_level' type="text" className="form-control"
                                             id="skill_level"
-                                            {...register('skill_level', {required: "Skill Level is Required"})}/>
+                                            {...register('skill_level', {required: "Skill Level is Required"})}
+                                            >
+                                            <option hidden>Choose your Strength level</option>
+                                            <option value="1">Novice</option>
+                                            <option value="2">Advanced Beginner</option>
+                                            <option value="3">Competent</option>
+                                            <option value="4">Proficient</option>
+                                            <option value="5">Expert</option>
+                                        </select>
                                         {/*<small className="text-danger">Skill level is Required</small>*/}
-                                        {errors.skill_level && (<small className="text-danger">{errors.skill_level.message}</small>)}
+                                        {/*{errors.skill_level && (<small className="text-danger">{errors.skill_level.message}</small>)}*/}
 
                                             {/*<label htmlFor="inputSkillLevel" className="form-label">Skill Level</label>*/}
                                         {/*<select id="inputSkillLevel" className="form-select"*/}
@@ -350,11 +391,18 @@ const Register = () => { //{ submitFo handleSubmit, userData, setUserData, error
                                     </div>
                                     <div className="col-md-12">
                                             <label htmlFor="inputGameType" className="form-label">Game Type</label>
-                                            <input
-                                                /*value={userData.game_type}*/
+                                            <select
                                                  name='game_type' type="text" className="form-input form-control"
                                                 id="inputGameType"
-                                                {...register("game_type", {required: "Game Type is Required"})}/>
+                                                {...register("game_type", {required: "Game Type is Required"})}
+                                            >
+                                                <option hidden>Choose your Game</option>
+                                                <option value="PT">Badminton</option>
+                                                <option value="F">Paddle tennis</option>
+                                                <option value="S">Squash</option>
+                                                <option value="TT">Table Tennis</option>
+                                                <option value="T">Tennis</option>
+                                            </select>
                                         {/*<small className="text-danger">Game Type is Required</small>*/}
                                         {errors.game_type && (<small className="text-danger">{errors.game_type.message}</small>)}
 
@@ -375,7 +423,7 @@ const Register = () => { //{ submitFo handleSubmit, userData, setUserData, error
                                                name='password'
                                                {...register("password", {required: "Password is Required"})}/>
                                         {/*<small className="text-danger">Password is Required</small>*/}
-                                        {errors.password && (<small className="text-danger">{errors.password.message}</small>)}
+                                        {/*{errors.password && (<small className="text-danger">{errors.password.message}</small>)}*/}
 
                                         {/*{errors.password && <p className="text-danger">{errors.password}</p>}*/}
 
@@ -391,15 +439,16 @@ const Register = () => { //{ submitFo handleSubmit, userData, setUserData, error
                                                name='confirm_password'
                                                {...register("confirm_password", {required: "Please confirm your Password"})}/>
                                         {/*<small className="text-danger">Please confirm your Password</small>*/}
-                                        {errors.confirm_password && <small className="text-danger">{errors.confirm_password}</small>}
+                                        {/*{errors.confirm_password && <small className="text-danger">{errors.confirm_password}</small>}*/}
                                     </div>
-                                <div className="col-md-12">
+                                <div className="col-md-12 mb-4">
                                     <label htmlFor="inputGender" className="form-label">Gender</label>
                                     {/*<input*/}
 
                                     <select {...register("gender", {required: "Gender is Required"})}
                                         name='gender' type="text"
                                         className="form-input form-control" id="inputGender">
+                                        <option hidden>Choose your Gender</option>
                                         <option value="M">Male</option>
                                         <option value="F">Female</option>
                                     </select>

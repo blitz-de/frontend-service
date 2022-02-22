@@ -51,6 +51,10 @@
       <change beforePath="$PROJECT_DIR$/../discovery-service/src/main/java/discovery_service/DiscoveryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/src/main/java/discovery_service/DiscoveryServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../discovery-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../discovery-service/src/test/java/discovery_service/DiscoveryServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/src/test/java/discovery_service/DiscoveryServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/Register.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mainApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mainApp/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mainApp/src/main/java/mainApp/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mainApp/src/main/java/mainApp/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../mainApp/src/main/java/mainApp/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mainApp/src/main/java/mainApp/model/Product.java" afterDir="false" />
@@ -143,7 +147,7 @@
       <workItem from="1645383595901" duration="18000" />
       <workItem from="1645383707536" duration="7524000" />
       <workItem from="1645454161350" duration="20541000" />
-      <workItem from="1645511254918" duration="11288000" />
+      <workItem from="1645511254918" duration="16519000" />
     </task>
     <servers />
   </component>
