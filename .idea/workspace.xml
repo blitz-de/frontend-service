@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bf8ee91d-ee86-4e16-b97c-bc506c46ac17" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../api-gateway/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator-app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator-app/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator-app/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator-app/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator-app/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator-app/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator-app/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator-app/src/main/java/calculatorApp/CalculatorAppApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator-app/src/main/java/calculatorApp/controller/CalculatorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator-app/src/main/java/calculatorApp/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator-app/src/main/java/calculatorApp/service/CalculatorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator-app/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator-app/src/test/java/calculatorApp/CalculatorAppApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/calculatorApp-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/calculatorApp-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/surefire-reports/2022-02-07T02-05-41_733-jvmRun1.dump" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/surefire-reports/TEST-calculatorApp.CalculatorApplicationTests.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator/target/surefire-reports/calculatorApp.CalculatorApplicationTests.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../discovery-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../mainApp/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calculator/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calculator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calculator/src/main/java/calculatorApp/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/src/main/java/calculatorApp/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/CalculatorApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/CalculatorApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/controller/CalculatorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/controller/CalculatorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/model/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/service/CalculatorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/service/CalculatorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../calculator/target/test-classes/calculatorApp/CalculatorApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/test-classes/calculatorApp/CalculatorApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/src/main/java/discovery_service/DiscoveryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/src/main/java/discovery_service/DiscoveryServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/src/test/java/discovery_service/DiscoveryServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/src/test/java/discovery_service/DiscoveryServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mainApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mainApp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mainApp/src/main/java/mainApp/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mainApp/src/main/java/mainApp/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mainApp/src/main/java/mainApp/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mainApp/src/main/java/mainApp/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../mainApp/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../mainApp/src/main/resources/application.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="24sfMPqImbyizv2kwgB1VsrdRUV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../4- BA/tennis-companion-portal/services" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zacki\OneDrive\UNIVERSITAET\LastSemester\kbe - tobias\App-Calculator\mwstAppCalculator\frontend_tennis_companion\src\components\User" />
+      <recent name="C:\Users\zacki\OneDrive\UNIVERSITAET\LastSemester\kbe - tobias\App-Calculator\mwstAppCalculator\frontend_tennis_companion\src\components" />
+      <recent name="C:\Users\zacki\OneDrive\UNIVERSITAET\LastSemester\kbe - tobias\App-Calculator\mwstAppCalculator\frontend_tennis_companion\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bf8ee91d-ee86-4e16-b97c-bc506c46ac17" name="Changes" comment="" />
+      <created>1644424170275</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644424170275</updated>
+      <workItem from="1644424171657" duration="10891000" />
+      <workItem from="1644531942049" duration="5286000" />
+      <workItem from="1644848562807" duration="25223000" />
+      <workItem from="1644939537772" duration="26773000" />
+      <workItem from="1645108401073" duration="42658000" />
+      <workItem from="1645382704652" duration="325000" />
+      <workItem from="1645383595901" duration="18000" />
+      <workItem from="1645383707536" duration="7524000" />
+      <workItem from="1645454161350" duration="20541000" />
+      <workItem from="1645511254918" duration="11288000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/User/UserDetail.js</url>
+          <line>26</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/User/UserDetail.js</url>
+          <line>20</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/User/FavoritePlayers.js</url>
+          <line>20</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/User/PopularUsers.js</url>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/User/Login.js</url>
+          <line>15</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
