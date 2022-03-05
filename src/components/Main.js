@@ -1,3 +1,7 @@
+import React from 'react';
+
+
+// Home,Search, About, Header, Footer
 import Home from './Home'
 import Search from "./Search";
 import About from "./About";
@@ -7,6 +11,8 @@ import Footer from "./Footer";
 //User
 import UserDetail from './User/UserDetail';
 import Login from './User/Login';
+import UserLogout from './User/UserLogout';
+
 // import RegisterForm from './User/RegisterForm';
 import Register from './User/Register';
 import Dashboard from './User/Dashboard';
@@ -17,8 +23,10 @@ import RecommendedPlayers from './User/RecommendedPlayers';
 import ProfileSettings from './User/ProfileSettings';
 import ChangePassword from './User/ChangePassword';
 
+
 //Admin
 import AdminLogin from './Admin/AdminLogin';
+import AdminLogout from './Admin/AdminLogout';
 import AdminRegister from './Admin/AdminRegister';
 import AdminDashboard from './Admin/AdminDashboard';
 import AdminDetail from './Admin/AdminDetail';
@@ -33,10 +41,13 @@ import LatestUsers from './User/LatestUsers';
 import PopularUsers from './User/PopularUsers';
 import NewUsers from './User/NewUsers';
 
-import {Routes as Switch, Route} from 'react-router-dom';
+import {Routes as Switch, Route, Navigate} from 'react-router-dom';
+
+// PrivateRoute
+import PrivateRoute from './utils/PrivateRoute';
+import RequireAuth from './RequireAuth';
 
 function Main() {
-
 
     return (
         <div className="App">
@@ -44,11 +55,21 @@ function Main() {
             <Switch>
                 {/*// User*/}
                 <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
+                {/*protected Routes*/}
+                <Route element={<RequireAuth />}>
+                    <Route path="/about" element={<About />} />
+                </Route>
                 <Route path="/detail/:user_id" element={<UserDetail />} />
-                <Route path="/user/user-login" element={<Login />} />
-                <Route path="/user/user-register" element={<Register />} />
-                <Route path="/user-dashboard" element={<Dashboard />} />
+                <Route path="/user-login" element={<Login />} />
+                <Route path="/user-logout" element={<UserLogout />} />
+                <Route path="/user-register" element={<Register />} />
+                {/*Private Routes*/}
+                <Route path="/user-dashboard" element={
+                    <PrivateRoute>
+                        {/*if useAuth==true redirect us to Dashboard*/}
+                        <Dashboard />
+                    </PrivateRoute>
+                } />
                 <Route path="/my-games" element={<MyGames />} />
                 <Route path="/my-profile" element={<MyProfile />} />
                 <Route path="/favorite-players" element={<FavoritePlayers />} />
@@ -58,6 +79,7 @@ function Main() {
 
                 {/*// Admin*/}
                 <Route path="/admin-login" element={<AdminLogin />} />
+                <Route path="/admin-logout" element={<AdminLogout />} />
                 <Route path="/admin-register" element={<AdminRegister />} />
                 <Route path="/admin-dashboard" element={<AdminDashboard />} />
                 <Route path="/admin-detail/:admin_id" element={<AdminDetail />} />

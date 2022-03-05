@@ -2,62 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf8ee91d-ee86-4e16-b97c-bc506c46ac17" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../api-gateway/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator-app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator-app/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator-app/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator-app/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator-app/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator-app/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator-app/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator-app/src/main/java/calculatorApp/CalculatorAppApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator-app/src/main/java/calculatorApp/controller/CalculatorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator-app/src/main/java/calculatorApp/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator-app/src/main/java/calculatorApp/service/CalculatorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator-app/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator-app/src/test/java/calculatorApp/CalculatorAppApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/calculatorApp-0.0.1-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/calculatorApp-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/surefire-reports/2022-02-07T02-05-41_733-jvmRun1.dump" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/surefire-reports/TEST-calculatorApp.CalculatorApplicationTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../calculator/target/surefire-reports/calculatorApp.CalculatorApplicationTests.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../discovery-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mainApp/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../api-gateway/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/src/main/java/calculatorApp/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/src/main/java/calculatorApp/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/CalculatorApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/CalculatorApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/controller/CalculatorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/controller/CalculatorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/model/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/model/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/service/CalculatorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/classes/calculatorApp/service/CalculatorService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../calculator/target/test-classes/calculatorApp/CalculatorApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/../calculator/target/test-classes/calculatorApp/CalculatorApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../discovery-service/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../discovery-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../discovery-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../discovery-service/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../discovery-service/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../discovery-service/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../discovery-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../discovery-service/src/main/java/discovery_service/DiscoveryServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/src/main/java/discovery_service/DiscoveryServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../discovery-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../discovery-service/src/test/java/discovery_service/DiscoveryServiceApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../discovery-service/src/test/java/discovery_service/DiscoveryServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Admin/AdminLogout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/RequireAuth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/User/UserLogout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/context/AuthContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/context/AuthProivider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/hooks/useAuth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/utils/PrivateRoute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AdminDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AdminLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AdminRegister.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/User/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/User/styles/Form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/styles/RegisterStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mainApp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../mainApp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mainApp/src/main/java/mainApp/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mainApp/src/main/java/mainApp/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mainApp/src/main/java/mainApp/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../mainApp/src/main/java/mainApp/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../mainApp/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../mainApp/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,14 +62,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../4- BA/tennis-companion-portal/services" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zacki\OneDrive\UNIVERSITAET\LastSemester\4- BA\tennis-companion-portal\frontend\frontend-service\src\components" />
+      <recent name="C:\Users\zacki\OneDrive\UNIVERSITAET\LastSemester\4- BA\tennis-companion-portal\frontend\frontend-service\src\components\Admin" />
+      <recent name="C:\Users\zacki\OneDrive\UNIVERSITAET\LastSemester\4- BA\tennis-companion-portal\frontend\frontend-service\src\components\User" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\zacki\OneDrive\UNIVERSITAET\LastSemester\kbe - tobias\App-Calculator\mwstAppCalculator\frontend_tennis_companion\src\components\User" />
       <recent name="C:\Users\zacki\OneDrive\UNIVERSITAET\LastSemester\kbe - tobias\App-Calculator\mwstAppCalculator\frontend_tennis_companion\src\components" />
@@ -147,6 +114,7 @@
       <workItem from="1645383707536" duration="7524000" />
       <workItem from="1645454161350" duration="20541000" />
       <workItem from="1645511254918" duration="28731000" />
+      <workItem from="1646479950463" duration="787000" />
     </task>
     <servers />
   </component>
@@ -191,12 +159,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/User/Login.js</url>
-          <line>15</line>
+          <line>18</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/index.js</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
