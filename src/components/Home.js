@@ -4,7 +4,7 @@ import AllUsers from './User/AllUsers';
 import PopularUsers from './User/PopularUsers';
 import LatestUsers from './User/LatestUsers';
 import NewUsers from './User/NewUsers';
-import {useEffect}from 'react';
+import React, {useEffect}from 'react';
 
 function Home() {
     useEffect(()=>{

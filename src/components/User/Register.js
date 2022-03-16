@@ -1,13 +1,14 @@
+import React, {useEffect} from 'react';
 import "./styles/RegisterStyles.css";
 import { Country, State, City }  from 'country-state-city';
 // import validate from './validateInfo';
-import React from 'react';
 // import {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
-// import ReactDOM from 'react-dom';
-
-const baseUrl = 'http://localhost:8000/api/tennisplayer/';
+// to rediretct, we're going to use useHistory
+import axiosInstance from '../axios';
+// const baseUrl = 'http://localhost:8000/api/tennisplayer/';
+const baseUrl = 'user/create/'
 
 
 
@@ -31,12 +32,36 @@ const Register = () => {
     // const [successState, setSuccessInfo] = useState({
     //     'status':''
     // });
+
+    // export default function SignUp(){
+    //
+    //     const initialFormData = Objcet.freeze({
+    //         email: '',
+    //         username: '',
+    //         password: '',
+    //     });
+    //
+    //     const [formData, updateFormData] = useState(initialFormData);
+    //
+    //     const handleChange = (e) => {
+    //         updateFormData({
+    //             ...formData,
+    //             //Triming any whitespace
+    //             [e.traget.name]: e.target.value.trim(),
+    //         });
+    //     }
+    // }
     const onSubmit = userData => {
+        // const history = useHistory();
         console.log(userData);
         console.log(Country.getAllCountries())
 
         console.log("another info")
         const userFormData = new FormData();
+        // userFormData.append("email", userData.email)
+        // userFormData.append("user_name", userData.user_name)
+        // userFormData.append("password", userData.password)
+        console.log(userData)
         userFormData.append("first_name", userData.first_name)
         userFormData.append("last_name", userData.last_name)
         userFormData.append("email", userData.email)
@@ -55,24 +80,37 @@ const Register = () => {
         userFormData.append("gender", userData.gender)
         console.log(userData)
         console.log(userFormData.getAll("skill_level"))
+        console.log("fwfw")
         try {
-            axios.post(baseUrl, userFormData).then((response) => {
+            // axios.post(baseUrl, userFormData).then((response) => {
+            axiosInstance.post(baseUrl, userFormData).then((response) => {
+                // history.push('/login');
                 console.log(response.data)
-
-                // setSuccessInfo({
-                //     'status': 'success'
+                console.log("fwwwfw")
+                // setSuccessInf({
+                //     'status': 'skuccess'
                 // });
                 });
 
         } catch (error) {
+            console.log("wrwrtw")
+
             console.log(userFormData + "hola");
             // ReactDOM.render(myelement, document.getElementById('root'));
-
+            console.log("wrwrtw")
             // setSuccessInfo('status': 'error')
             console.log("here is an error: " + error);
         }
     }
 
+    useEffect(()=>{
+        document.title='Registration page';
+    });
+
+    const userLoginStatus = localStorage.getItem('userLoginStatys')
+    if(userLoginStatus=='true'){
+        window.location.href='/user-dashboard';
+    }
     return (
 
         <div className="container mt-4">
@@ -133,6 +171,21 @@ const Register = () => {
                                         />
                                         {errors.email && <small className="text-danger">{errors.email.message}</small>}
                                     </div>
+                                    {/*<div className="col-md-6">*/}
+                                    {/*    <label htmlFor="inputUsername" className="form-label">Username</label>*/}
+                                    {/*    <input*/}
+                                    {/*        name='user_name' type="username"*/}
+                                    {/*        id="inputUsername"*/}
+                                    {/*        {...register("user_name", {*/}
+                                    {/*            required: "Username is Required",*/}
+                                    {/*        })}*/}
+                                    {/*        className={`form-control ${errors.user_name && "invalid"}`}*/}
+                                    {/*        onKeyUp={() => {*/}
+                                    {/*            trigger("user_name");*/}
+                                    {/*        }}*/}
+                                    {/*    />*/}
+                                    {/*    {errors.user_name && <small className="text-danger">{errors.user_name.message}</small>}*/}
+                                    {/*</div>*/}
 
                                     <div className="col-md-6">
                                         <label htmlFor="inputCountry" className="form-label">Country</label>
