@@ -4,18 +4,25 @@ import AdminSidebar from './AdminSidebar';
 import React , {useEffect, useState} from "react";
 import axios from 'axios';
 
-const baseUrl = 'http://127.0.0.1:8002/api/user'
+const baseUrl = 'http://localhost:8080/api'
 function RegisteredUsers() {
 
     const [getUsersState, setUsersState] = useState("");
+    const [getResponseLength, setResponseLength] = useState(0);
+    const usernameStatus = localStorage.getItem('usernameStatus');
+
     console.log("imm")
     useEffect(()=>{
         try{
-            axios.get(baseUrl+'/all-registered-users/').then((response)=>{
+            axios.get(baseUrl+'/registered-users/').then((response)=>{
+                console.log("I am here")
                 console.log(response.data);
                 // getUsersState = response.data;
                 setUsersState(response.data)
-                console.log("gafafogh", getUsersState)
+                setResponseLength(Object.keys(response.data).length)
+                // localStorage.setItem('userLoginStatus', true);
+
+                console.log("gsssafsogh", getUsersState)
             });
         }
         catch (error) {
@@ -25,16 +32,17 @@ function RegisteredUsers() {
     }, []);
 
     function renderTableData() {
-        return getUsersState.users?.map((user, index)=> {
+        // return getUsersState.users?.map((user, index)=> {
+        return Array.from(Array(getResponseLength), (user, index) => {
             return (
             <tr key={index}>
-                <td>{user}
+                <td>{getUsersState[index].email}
                 </td>
                 <td key={index}><Link to="/detail/:user_id">
-                    {getUsersState.date_created[index]}
+                    {getUsersState[index].date_created}
                 </Link></td>
                 <td className="col-md-2 ms-auto">
-                    <Link to="/user-reviews/:user_id">
+                    <Link to={"/user-reviews/"+getUsersState[index].username}>
                         <button className="btn btn-outline-success btn-sm">
                             Reviews</button></Link>
                     <Link to="/"><button className="btn btn-outline-danger btn-sm float-end">

@@ -3,7 +3,7 @@
  import axios from 'axios';
  import {useForm} from 'react-hook-form';
  import axiosInstance from '../axios';
- const baseUrl = 'http://127.0.0.1:8002/api/'
+ const baseUrl = 'http://localhost:8080/api/'
 function Login () {
     const [getErrorMessage, setErrorMessage] = useState("");
 
@@ -31,7 +31,7 @@ function Login () {
                 (error) => {
                     if (error.response.status === 401) {
                         setErrorMessage(error.response.status); //Output: 401
-                        console.log("fgigfiam", error.response.status)
+                        console.log("fgigfiasdm", error.response.status)
                     }
 
                     return Promise.reject(error);
@@ -39,23 +39,30 @@ function Login () {
             )
             axios.all([
                 axiosInstance.post(`token/`, userFormData),
-                axios.post(baseUrl+'user/user-login/', userFormData)
+                axios.post(baseUrl+'login/', userFormData)//user/user-login/
 
             ])
             .then(axios.spread((response1, response2) => {
                 console.log("I am here")
+                console.log(response1.data)
                 localStorage.setItem('access_token', response1.data.access);
                 localStorage.setItem('refresh_token', response1.data.refresh);
                 // Update the axios token, implemented in axios.js
                 axiosInstance.defaults.headers['Authorization'] =
                     'JWT ' + localStorage.getItem('access_token');
 
+                console.log("jwt ", )
                 // make another request to login? axios.post(baseUrl, userFormData) .then((response) => { if response.data.bool==true)
                 // Navigate to Homepage
-                if(response2.data.bool==true){
+                console.log("authenticated", response2.data.bool)
+                if (response2.data.bool==true){
+                    console.log("hi")
+
                     // navigate('/user-dashboard')
-                    window.location.href='/user-dashboard';
+                    // window.location.href='/user-dashboard';
                     localStorage.setItem('userLoginStatus', true);
+                    console.log("username: ", response2.data.username)
+                    localStorage.setItem('usernameStatus', response2.data.username)
                     console.log("fafafa",response2.data.isAdmin)
                     if (response2.data.isAdmin==true){
                         localStorage.setItem('userAdminStatus', true);
@@ -71,6 +78,7 @@ function Login () {
                 // if(response.data.bool==true){ localStorage.setItem...
                 // console.log(response.data)
                 console.log('response1', response1, 'response2', response2)
+                window.location.href='/user-dashboard';
             }));
         } catch (error){
             console.log('this is an error')
@@ -79,6 +87,7 @@ function Login () {
     }
     // End submit form
     const userLoginStatus = localStorage.getItem('userLoginStatus');
+    const userUsernameStatus = localStorage.getItem('usernameStatus');
     const userAdminStatus = localStorage.getItem('userAdminStatus');
 
     useEffect(()=>{
@@ -145,7 +154,8 @@ function Login () {
                                             trigger("password");
                                         }}/>
                                 </div>
-                                <button type="submit" className="btn btn-primary">Login</button>
+                                <button type="submit" className="btn btn-primary ">Login</button>
+                                <button type="submit" className="btn btn-primary">Login using Google</button>
                             </form>
                         </div>
                     </div>

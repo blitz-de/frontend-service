@@ -1,21 +1,14 @@
+import React from 'react';
 import {Link} from 'react-router-dom';
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
 
-const baseUrl = 'http://127.0.0.1:8000/api'
+function NewUsers () {
+    
+    return(
 
-function PopularUsers() {
-    const [user, setUser]=useState(null);
-    useEffect(()=>{
-        axios.get(baseUrl+'/tennisplayer/').then((response)=>{
-            console.log(response.data);
-        });
-    }, []);
-    return (
         <div>
-            {/*Popular Tennis players*/}
-            <h3 className="pb-1 mb-4 mt-5"><Link to="/popular-users" className="float-end">See All</Link>
-                Popular Tennis players</h3>
+            {/*Start of New Users*/}
+            <h3 className="pb-1 mb-4 mt-5"><Link to="new-users" className="float-end">See All</Link>
+                New Tennis players</h3>
             <div className="row">
 
                 <div className="col-md-4">
@@ -43,8 +36,7 @@ function PopularUsers() {
                         {/*TODO: fetch rating and make icons instead of numbers*/}
                         <div className='card-footer'>
                             <div className="title">
-                                <span>Rating: 3.4/5</span>
-                                <span className="float-end">Views: 1000</span>
+                                <span className="float-end">Rating: 3.4/5</span>
                             </div>
                         </div>
                     </div>
@@ -59,17 +51,27 @@ function PopularUsers() {
                         {/*TODO: fetch rating and make icons instead of numbers*/}
                         <div className='card-footer'>
                             <div className="title">
-                                <span>Rating: 3.4/5</span>
-                                <span className="float-end">Views: 1000</span>
+                                <span className="float-end">Rating: 3.4/5</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-            {/*End popular Tennis players*/}
+            {/*End latest users*/}
+            {/*Start of paginaation*/}
+            <nav aria-label="Page navigation example">
+                <ul className="pagination justify-content-center mt-5 pagination-lg">
+                    <li className="page-item"><Link className="page-link" to="#">Previous</Link></li>
+                    <li className="page-item"><Link className="page-link" to="#">1</Link></li>
+                    <li className="page-item"><Link className="page-link" to="#">2</Link></li>
+                    <li className="page-item"><Link className="page-link" to="#">3</Link></li>
+                    <li className="page-item"><Link className="page-link" to="#">Next</Link></li>
+                </ul>
+            </nav>
+            {/*End of pagination*/}
         </div>
-    )
+    );
 }
 
-export default PopularUsers;
+export default NewUsers;

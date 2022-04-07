@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 
 // Home,Search, About, Header, Footer
@@ -18,8 +18,8 @@ import Register from './User/Register';
 import Dashboard from './User/Dashboard';
 import MyGames from './User/MyGames';
 import MyProfile from './User/MyProfile';
-import FavoritePlayers from './User/FavoritePlayers';
-import RecommendedPlayers from './User/RecommendedPlayers';
+import FavoritePlayers from './User/UserCategory/FavoritePlayers';
+import RecommendedPlayers from './User/UserCategory/RecommendedPlayers';
 import ProfileSettings from './User/ProfileSettings';
 import ChangePassword from './User/ChangePassword';
 
@@ -33,21 +33,35 @@ import AdminDetail from './Admin/AdminDetail';
 import AdminProfileSettings from './Admin/AdminProfileSettings';
 import RegisteredUsers from './Admin/RegisteredUsers';
 import UserReviews from './Admin/UserReviews';
-import Review from './User/Review';
+import Review from './Reviews/Review';
 
 // List pages
 import AllUsers from './User/AllUsers';
-import LatestUsers from './User/LatestUsers';
-import PopularUsers from './User/PopularUsers';
-import NewUsers from './User/NewUsers';
+import LatestUsers from './User/UserCategory/LatestUsers';
+import PopularUsers from './User/UserCategory/PopularUsers';
+import NewUsers from './User/UserCategory/NewUsers';
 
 import {Routes as Switch, Route, Navigate} from 'react-router-dom';
 
 // PrivateRoute
 import PrivateRoute from './utils/PrivateRoute';
 import RequireAuth from './RequireAuth';
+// const usernameStatus = localStorage.getItem('usernameStatus');
+
 
 function Main() {
+    // const [getUsersState, setUsersState] = useState("");
+    // const [getResponseLength, setResponseLength] = useState(0);
+
+    // function renderUsers() {
+    //     // return getUsersState.users?.map((user, index)=> {
+    //     console.log("############### ", this.props.getResponseLength)
+    //     return Array.from(Array(getResponseLength), (user, index) => {
+    //         return (
+    //             <Route key={index} path={"/user-reviews/"+getUsersState[index].username+'/'} element={<UserReviews />} />
+    //         )
+    //     })
+    // }
 
     return (
         <div className="App">
@@ -86,7 +100,10 @@ function Main() {
                 <Route path="/admin-profile-settings/:admin_id" element={<AdminProfileSettings />} />
                 <Route path="/all-registered-users" element={<RegisteredUsers />} />
                 {/*TODO: Reviews of user_id*/}
-                <Route path="/user-reviews/:user_id" element={<UserReviews />} />
+                {/*<Route path={"/user-reviews/"+usernameStatus+'/'} element={<UserReviews />} />*/}
+                <Route path={"/user-reviews/:username"}
+                       element={<UserReviews />} 
+                />
                 <Route path="/user-reviews/:user_id/:review_id" element={<Review />} />
 
                 <Route path="/all-users" element={<AllUsers />} />

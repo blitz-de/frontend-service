@@ -27,6 +27,7 @@ function AdminLogin () {
 
         try
         {
+            
             axios.all([
                 axiosInstance.post(`token/`, userFormData),
                 axios.post(baseUrl+'user/user-login/', userFormData)
