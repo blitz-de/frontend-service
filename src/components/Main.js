@@ -34,6 +34,7 @@ import AdminProfileSettings from './Admin/AdminProfileSettings';
 import RegisteredUsers from './Admin/RegisteredUsers';
 import UserReviews from './Admin/UserReviews';
 import Review from './Reviews/Review';
+import UserReviewDetails from './Reviews/UserReviewDetails';
 
 // List pages
 import AllUsers from './User/AllUsers';
@@ -104,8 +105,11 @@ function Main() {
                 <Route path={"/user-reviews/:username"}
                        element={<UserReviews />} 
                 />
+                
+                <Route path="/user-reviews/:username/user-reviews-details/:pkid"
+                       element={<UserReviewDetails />}
+                />
                 <Route path="/user-reviews/:user_id/:review_id" element={<Review />} />
-
                 <Route path="/all-users" element={<AllUsers />} />
                 <Route path="/latest-users" element={<LatestUsers />} />
                 <Route path="/popular-users" element={<PopularUsers />} />
