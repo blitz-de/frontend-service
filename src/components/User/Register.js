@@ -107,7 +107,7 @@ const Register = () => {
         document.title='Registration page';
     });
 
-    const userLoginStatus = localStorage.getItem('userLoginStatys')
+    const userLoginStatus = localStorage.getItem('userLoginStatus')
     if(userLoginStatus=='true'){
         window.location.href='/user-dashboard';
     }

@@ -7,7 +7,7 @@ function AllUsers () {
         <div>
             {/*start latest courses*/}
             <h3 className="pb-2 mb-4"><Link to="all-users" className="float-end">See All</Link>
-                Latest Tennis players</h3>
+                Latest Tennis playersssss</h3>
             <div className="row">
 
                 <div className="col-md-4">
