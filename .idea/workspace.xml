@@ -14,6 +14,7 @@
       <change beforePath="$PROJECT_DIR$/src/components/User/MyGames.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/MyGames.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/User/UserDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/UserDetail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/User/UserLogout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/UserLogout.js" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
