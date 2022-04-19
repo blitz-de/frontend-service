@@ -4,6 +4,13 @@ import axios from 'axios';
 import {useForm} from 'react-hook-form';
 import axiosInstance from '../axios';
 const baseUrl = 'http://127.0.0.1:8002/api/'
+import React from 'react';
+import {useNavigate, Navigate, Link} from 'react-router-dom';
+import {useEffect, useState} from "react";
+import axios from 'axios';
+import {useForm} from 'react-hook-form';
+import axiosInstance from '../axios';
+const baseUrl = 'http://127.0.0.1:8002/api/'
 
 function AdminLogin () {
 
@@ -26,6 +33,7 @@ function AdminLogin () {
 
         try
         {
+            
             axios.all([
                 axiosInstance.post(`token/`, userFormData),
                 axios.post(baseUrl+'user/user-login/', userFormData)

@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+
+ frontend_api:
+   build:
+     context: .
+     dockerfile: Dockerfile
+   restart: on-failure
+   volumes:
+     - .:/app
+     - /app/node_modules
+   ports:
+     - 3000:3000
+   env_file:
+     - .env
+   networks:
+     - my-tennis-react
+
+networks:
+ my-tennis-react:
+   external:
+     name: users_network

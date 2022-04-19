@@ -1,10 +1,11 @@
 import {Link} from 'react-router-dom';
 import Search from "./Search";
 import AllUsers from './User/AllUsers';
-import PopularUsers from './User/PopularUsers';
-import LatestUsers from './User/LatestUsers';
-import NewUsers from './User/NewUsers';
-import {useEffect}from 'react';
+import PopularUsers from './User/UserCategory/PopularUsers';
+import LatestUsers from './User/UserCategory/LatestUsers';
+import NewUsers from './User/UserCategory/NewUsers';
+import RecommendedPlayers from './User/UserCategory/RecommendedPlayers';
+import React, {useEffect}from 'react';
 
 function Home() {
     useEffect(()=>{
@@ -23,7 +24,7 @@ function Home() {
             <PopularUsers />
             {/*End popular Tennis players*/}
             {/*New Tennis players*/}
-            <NewUsers/>
+            <RecommendedPlayers/>
             {/*End New Tennis players*/}
 
             {/*Players Testimonials*/}

@@ -1,3 +1,4 @@
+import React from 'react';
 import MyGames from './MyGames';
 import Sidebar from '../Sidebar';
 

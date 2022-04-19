@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 // TODO: Add a filter panel
 function Search() {
