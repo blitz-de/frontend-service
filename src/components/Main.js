@@ -1,69 +1,58 @@
-import React, {useState} from 'react';
+import React from 'react'; //, {useState}
 
 
 // Home,Search, About, Header, Footer
 import Home from './Home'
-import Search from "./Search";
+// import Search from "./Search";
 import About from "./About";
 import Header from "./Header";
 import Footer from "./Footer";
 
 //User
-import UserDetail from './User/UserDetail';
-import Login from './User/Login';
-import UserLogout from './User/UserLogout';
+import UserDetail from '../user_management/profile_management/non_admin/UserDetail';
+import Login from '../user_management/user_login/Login';
+import UserLogout from '../user_management/user_login/UserLogout';
 
 // import RegisterForm from './User/RegisterForm';
-import Register from './User/Register';
+import Register from '../user_management/user_register/Register';
 import Dashboard from './User/Dashboard';
-import MyGames from './User/MyGames';
-import MyProfile from './User/MyProfile';
-import FavoritePlayers from './User/UserCategory/FavoritePlayers';
-import RecommendedPlayers from './User/UserCategory/RecommendedPlayers';
-import ProfileSettings from './User/ProfileSettings';
-import ChangePassword from './User/ChangePassword';
-
+import MyGames from '../user_management/profile_management/non_admin/MyGames';
+import MyProfile from '../user_management/profile_management/non_admin/MyProfile';
+import FavoritePlayers from '../user_management/user_search_and_category/FavoritePlayers';
+import RecommendedPlayers from '../user_management/user_search_and_category/RecommendedPlayers';
+import ProfileSettings from '../user_management/profile_management/non_admin/ProfileSettings';
+import ChangePassword from '../user_management/profile_management/non_admin/ChangePassword';
+import PasswordReset from '../user_management/profile_management/non_admin/PasswordReset';
 
 //Admin
-import AdminLogin from './Admin/AdminLogin';
-import AdminLogout from './Admin/AdminLogout';
-import AdminRegister from './Admin/AdminRegister';
-import AdminDashboard from './Admin/AdminDashboard';
-import AdminDetail from './Admin/AdminDetail';
-import AdminProfileSettings from './Admin/AdminProfileSettings';
-import RegisteredUsers from './Admin/RegisteredUsers';
-import UserReviews from './Admin/UserReviews';
-import Review from './Reviews/Review';
-import UserReviewDetails from './Reviews/UserReviewDetails';
+import AdminLogin from '../user_management/profile_management/admin/AdminLogin';
+import AdminLogout from '../user_management/profile_management/admin/AdminLogout';
+import AdminRegister from '../user_management/profile_management/admin/AdminRegister';
+import AdminDashboard from '../user_management/profile_management/admin/AdminDashboard';
+import AdminDetail from '../user_management/profile_management/admin/AdminDetail';
+import AdminProfileSettings from '../user_management/profile_management/admin/AdminProfileSettings';
+import RegisteredUsers from '../user_management/user_search_and_category/RegisteredUsers';
+
+import UserReviews from '../review_management/Admin/UserReviews';
+import Review from '../review_management/Review';
+import UserReviewDetails from '../review_management/UserReviewDetails';
 
 // List pages
 import AllUsers from './User/AllUsers';
-import LatestUsers from './User/UserCategory/LatestUsers';
-import PopularUsers from './User/UserCategory/PopularUsers';
-import NewUsers from './User/UserCategory/NewUsers';
+import LatestUsers from '../user_management/user_search_and_category/LatestUsers';
+import PopularUsers from '../user_management/user_search_and_category/PopularUsers';
+import NewUsers from '../user_management/user_search_and_category/NewUsers';
 
-import {Routes as Switch, Route, Navigate} from 'react-router-dom';
+import {Routes as Switch, Route} from 'react-router-dom';//Navigate
 
 // PrivateRoute
-import PrivateRoute from './utils/PrivateRoute';
+import PrivateRoute from '../utils/PrivateRoute';
 import RequireAuth from './RequireAuth';
 // const usernameStatus = localStorage.getItem('usernameStatus');
 
 
 function Main() {
-    // const [getUsersState, setUsersState] = useState("");
-    // const [getResponseLength, setResponseLength] = useState(0);
-
-    // function renderUsers() {
-    //     // return getUsersState.users?.map((user, index)=> {
-    //     console.log("############### ", this.props.getResponseLength)
-    //     return Array.from(Array(getResponseLength), (user, index) => {
-    //         return (
-    //             <Route key={index} path={"/user-reviews/"+getUsersState[index].username+'/'} element={<UserReviews />} />
-    //         )
-    //     })
-    // }
-
+    
     return (
         <div className="App">
             <Header/>
@@ -74,7 +63,7 @@ function Main() {
                 <Route element={<RequireAuth />}>
                     <Route path="/about" element={<About />} />
                 </Route>
-                <Route path="/detail/:user_id" element={<UserDetail />} />
+                <Route path="/detail/:id" element={<UserDetail />} />
                 <Route path="/user-login" element={<Login />} />
                 <Route path="/user-logout" element={<UserLogout />} />
                 <Route path="/user-register" element={<Register />} />
@@ -105,7 +94,7 @@ function Main() {
                 <Route path={"/user-reviews/:username"}
                        element={<UserReviews />} 
                 />
-                
+
                 <Route path="/user-reviews/:username/user-reviews-details/:pkid"
                        element={<UserReviewDetails />}
                 />
@@ -114,6 +103,7 @@ function Main() {
                 <Route path="/latest-users" element={<LatestUsers />} />
                 <Route path="/popular-users" element={<PopularUsers />} />
                 <Route path="/new-users" element={<NewUsers />} />
+                <Route path="/accounts/login/" element={<Login />} />
 
             </Switch>
             {/*<Home />*/}
