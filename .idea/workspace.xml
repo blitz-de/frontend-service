@@ -1,19 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf8ee91d-ee86-4e16-b97c-bc506c46ac17" name="Changes" comment="1. fixed problem of authenticated users -&gt;axiosInstance&#10;2. optimized code: AxiosURLGetter.js and UserFetcher.js added&#10;3. feat: added IoIosStar for Rating&#10;4. recommendPlayers use the utils to reduce redundancy">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AdminDashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/RegisteredUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/RegisteredUsers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Admin/UserReviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/UserReviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/User/ChangePassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/ChangePassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/User/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/User/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/User/MyGames.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/MyGames.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/User/UserDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/UserDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/User/UserLogout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/UserLogout.js" afterDir="false" />
+    <list default="true" id="bf8ee91d-ee86-4e16-b97c-bc506c46ac17" name="Changes" comment="fetching popularusrs, recommended, etc.&#10;fetching registered usrs">
+      <change afterPath="$PROJECT_DIR$/src/review_management/Admin/UserReviews.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user_management/profile_management/admin/AdminDashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user_management/profile_management/non_admin/ChangePassword.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user_management/profile_management/non_admin/MyGames.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user_management/profile_management/non_admin/PasswordReset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user_management/profile_management/non_admin/UserDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user_management/user_login/Login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user_management/user_login/UserLogout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user_management/user_search_and_category/PopularUsers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user_management/user_search_and_category/RecommendedPlayers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/user_management/user_search_and_category/RegisteredUsers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/AxiosURLGetter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/ButtonMailto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/FetchCountries.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/GoogleButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/UserFilter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminDashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_management/profile_management/admin/AdminDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_management/profile_management/admin/AdminLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminLogout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_management/profile_management/admin/AdminLogout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminProfileSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_management/profile_management/admin/AdminProfileSettings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminRegister.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_management/profile_management/admin/AdminRegister.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_management/profile_management/admin/AdminSidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/RegisteredUsers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/UserReviews.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Reviews/Review.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/review_management/Review.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Reviews/UserReviewDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/review_management/UserReviewDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/ChangePassword.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/MyGames.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/MyProfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_management/profile_management/non_admin/MyProfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/ProfileSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_management/profile_management/non_admin/ProfileSettings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_management/user_register/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/RegisterForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_management/user_register/RegisterForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/UserCategory/FavoritePlayers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_management/user_search_and_category/FavoritePlayers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/UserCategory/LatestUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_management/user_search_and_category/LatestUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/UserCategory/NewUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/user_management/user_search_and_category/NewUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/UserCategory/PopularUsers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/UserCategory/RecommendedPlayers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/UserDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/UserLogout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/utils/AxiosURLGetter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/AxiosAuthURLGetter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/utils/PrivateRoute.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/PrivateRoute.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/utils/UserFetcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/UserFetcher.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +70,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="09.04version" />
+        <entry key="$PROJECT_DIR$" value="backup" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -153,13 +192,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/Main.js</url>
-          <line>2</line>
-          <option name="timeStamp" value="9" />
+          <line>49</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/Main.js</url>
-          <line>47</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/App.js</url>
+          <line>10</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/App.js</url>
+          <line>9</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/App.js</url>
+          <line>7</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/App.js</url>
+          <line>5</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

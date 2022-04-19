@@ -1,10 +1,10 @@
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
 import Search from "./Search";
-import AllUsers from './User/AllUsers';
-import PopularUsers from './User/UserCategory/PopularUsers';
-import LatestUsers from './User/UserCategory/LatestUsers';
-import NewUsers from './User/UserCategory/NewUsers';
-import RecommendedPlayers from './User/UserCategory/RecommendedPlayers';
+// import AllUsers from './User/AllUsers';
+import PopularUsers from '../user_management/user_search_and_category/PopularUsers';
+import LatestUsers from '../user_management/user_search_and_category/LatestUsers';
+// import NewUsers from '../user_management/user_search_and_category/NewUsers';
+import RecommendedPlayers from '../user_management/user_search_and_category/RecommendedPlayers';
 import React, {useEffect}from 'react';
 
 function Home() {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import MyProfile from './User/MyProfile';
+// import MyProfile from '../User_Management/Profile_Management/Not_Admin/MyProfile';
 
 function Header() {
     const userLoginStatus = localStorage.getItem('userLoginStatus');
@@ -16,7 +16,8 @@ function Header() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul className="navbar-nav ms-auto">
-                        {userAdminStatus != 'true' &&
+                        {/*!= previou*/}
+                        {userAdminStatus !== 'true' &&
                             <>
                                 <li className="nav-item dropdown">
                                     <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button"
@@ -25,8 +26,8 @@ function Header() {
                                     </Link>
                                     {/*if it's true show specific fields*/}
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        {/*if userLoginStatus == false -> show Login and Register*/}
-                                        {userLoginStatus != 'true' &&
+                                        {/*if userLoginStatus == false previous !=-> show Login and Register*/}
+                                        {userLoginStatus !== 'true' &&
                                             <>
                                                 <li><Link className="dropdown-item" to="/user-login">Login</Link></li>
                                                 <li><Link className="dropdown-item" to="/user-register">Register</Link></li>
@@ -34,26 +35,27 @@ function Header() {
                                         }
                                         <li><hr className="dropdown-divider" /></li>
                                         {/*if userLoginStatus == true -> show Dashboard and Logout*/}
-                                        {/*if userLoginStatus == true -> show Dashboard and Logout*/}
-                                        {userLoginStatus == 'true' &&
+                                        {/*if userLoginStatus == true previous ==-> show Dashboard and Logout*/}
+                                        {userLoginStatus === 'true' &&
                                             <>
                                                 <li><Link className="dropdown-item" to="/user-dashboard">Dashboard</Link></li>
                                                 <li><Link className="dropdown-item" to="/user-logout">Logout</Link></li>
+                                                
+                                                <li className="dropdown-item">
+                                                    <Link className="nav-link" to="/profile-settings">
+                                                        <i className="bi bi-gear-fill"></i>
+                                                    </Link>
+                                                </li>
                                             </>
                                         }
 
-                                        <li className="dropdown-item">
-                                            <Link className="nav-link" to="/profile-settings">
-                                                <i className="bi bi-gear-fill"></i>
-                                            </Link>
-                                        </li>
                                     </ul>
                                 </li>
                             </>
                         }
 
-                        {/*toDO: change != to == once done*/}
-                        {userAdminStatus == 'true' &&
+                        {/*toDO: change != to == once done previous ==*/}
+                        {userAdminStatus === 'true' &&
                             <>
                                 <li className="nav-item dropdown">
                                     <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button"
