@@ -1,4 +1,3 @@
-import React from 'react';
 import MyGames from '../User/MyGames';
 import Sidebar from '../Sidebar';
 import AdminSidebar from './AdminSidebar';
