@@ -62,8 +62,9 @@ function AdminLogin () {
     const userAdminStatus = localStorage.getItem('userAdminStatus');
 
     useEffect(()=>{
-        document.title='User Login';
+        document.title='AdminRegiseter'
     });
+    
     return (
         <div className="container mt-4">
             <div className="row">
