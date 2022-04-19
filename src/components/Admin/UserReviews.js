@@ -35,6 +35,7 @@ function UserReviews () {
     }, []);
 
     function renderTableData() {
+
         try {
             if (getUsersState.users.filter(i => i.rater === username))
                 return getUsersState.users?.map((user, index) => {
@@ -104,6 +105,7 @@ function UserReviews () {
                                     {(getErrorMessage==="Network Error")?
                                         <h1 className='text'>{username+" didn't rate anyone"}</h1>
                                         :renderTableData()}
+
 
                                     </tbody>
                                 </table>
