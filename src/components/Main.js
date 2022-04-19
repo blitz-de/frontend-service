@@ -15,7 +15,7 @@ import UserLogout from '../user_management/user_login/UserLogout';
 
 // import RegisterForm from './User/RegisterForm';
 import Register from '../user_management/user_register/Register';
-import Dashboard from './User/Dashboard';
+import Dashboard from '../user_management/components/Dashboard';
 import MyGames from '../user_management/profile_management/non_admin/MyGames';
 import MyProfile from '../user_management/profile_management/non_admin/MyProfile';
 import FavoritePlayers from '../user_management/user_search_and_category/FavoritePlayers';
@@ -25,7 +25,7 @@ import ChangePassword from '../user_management/profile_management/non_admin/Chan
 import PasswordReset from '../user_management/profile_management/non_admin/PasswordReset';
 
 //Admin
-import AdminLogin from '../user_management/profile_management/admin/AdminLogin';
+// import AdminLogin from '../user_management/profile_management/admin/AdminLogin';
 import AdminLogout from '../user_management/profile_management/admin/AdminLogout';
 import AdminRegister from '../user_management/profile_management/admin/AdminRegister';
 import AdminDashboard from '../user_management/profile_management/admin/AdminDashboard';
@@ -38,7 +38,6 @@ import Review from '../review_management/Review';
 import UserReviewDetails from '../review_management/UserReviewDetails';
 
 // List pages
-import AllUsers from './User/AllUsers';
 import LatestUsers from '../user_management/user_search_and_category/LatestUsers';
 import PopularUsers from '../user_management/user_search_and_category/PopularUsers';
 import NewUsers from '../user_management/user_search_and_category/NewUsers';
@@ -48,8 +47,6 @@ import {Routes as Switch, Route} from 'react-router-dom';//Navigate
 // PrivateRoute
 import PrivateRoute from '../utils/PrivateRoute';
 import RequireAuth from './RequireAuth';
-// const usernameStatus = localStorage.getItem('usernameStatus');
-
 
 function Main() {
     
@@ -82,7 +79,7 @@ function Main() {
                 <Route path="/change-password" element={<ChangePassword />} />
 
                 {/*// Admin*/}
-                <Route path="/admin-login" element={<AdminLogin />} />
+                {/*<Route path="/admin-login" element={<AdminLogin />} />*/}
                 <Route path="/admin-logout" element={<AdminLogout />} />
                 <Route path="/admin-register" element={<AdminRegister />} />
                 <Route path="/admin-dashboard" element={<AdminDashboard />} />
@@ -99,7 +96,6 @@ function Main() {
                        element={<UserReviewDetails />}
                 />
                 <Route path="/user-reviews/:user_id/:review_id" element={<Review />} />
-                <Route path="/all-users" element={<AllUsers />} />
                 <Route path="/latest-users" element={<LatestUsers />} />
                 <Route path="/popular-users" element={<PopularUsers />} />
                 <Route path="/new-users" element={<NewUsers />} />

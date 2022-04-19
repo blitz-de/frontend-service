@@ -22,7 +22,8 @@ function UserReviewDetails () {
                 console.log("get localStorage info: ", localStorage.getItem('userAdminStatus'))
             }, 1000);
         } catch (err) {
-            if (err.response) {
+            if (err.response.status === 404) {
+
                 console.log(err.response.status); // 👉️ 404
             } else if (err.message === "Network Error") {
                 setErrorMessage(err.message);
@@ -65,12 +66,14 @@ function UserReviewDetails () {
                     );
                 }
             }
-        } catch (error){
+        } catch (error) {
             console.log("here is an error: " + error);
-            return(<div>
-                
-                <h1>...Loading</h1>
-            </div>)
+            if (error.response.status === 404) {
+
+                return (<div>
+                    <h1>There are no reviews to see</h1>
+                </div>)
+            }
         }
     }
     return (

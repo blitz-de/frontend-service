@@ -1,44 +1,31 @@
 import React, {useEffect, useState} from 'react';
 import "../../components/User/styles/RegisterStyles.css";
 import { Country, State, City }  from 'country-state-city';
-// import validate from './validateInfo';
-// import {useState} from 'react';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
 // to rediretct, we're going to use useHistory
 import axiosInstance from '../../components/axios';
-// const baseUrl = 'http://localhost:8000/api/tennisplayer/';
 const baseUrl = 'http://localhost:8080'
 const endpoint = "/users/api/register/"
 
 
 const Register = () => {
-    // const myelement = React.createElement('h1', {}, 'I do not use JSX!');
-    // const {countryState, setCountryState} = useState("");
-    // function setCount(n){
-    //     console.log("!!!!!!!!!!!!!!!! ", n)
-    //     return n
-    // }
+
     const {
         register,
-        // setValue,
         handleSubmit,
         formState: { errors },
-        // reset,
         trigger
 
     } = useForm();
 
     const onSubmit = userData => {
-        // const history = useHistory();
         console.log(userData);
         console.log(Country.getAllCountries())
 
         console.log("another info")
         const userFormData = new FormData();
-        // userFormData.append("email", userData.email)
-        // userFormData.append("user_name", userData.user_name)
-        // userFormData.append("password", userData.password)
+
         console.log(userData)
         userFormData.append("first_name", userData.first_name)
         userFormData.append("last_name", userData.last_name)
@@ -58,9 +45,7 @@ const Register = () => {
         userFormData.append("password", userData.password)
         userFormData.append("re_password", userData.re_password)
         userFormData.append("gender", userData.gender)
-        console.log(userData)
         console.log(userFormData.getAll("skill_level"))
-        console.log("fwfww", userData.address_2)
         try {
             // axios.post(baseUrl, userFormData).then((response) => {
             axiosInstance.post(baseUrl+endpoint, userFormData).then((response) => {
@@ -164,22 +149,7 @@ const Register = () => {
                                         />
                                         {errors.email && <small className="text-danger">{errors.email.message}</small>}
                                     </div>
-                                    {/*<div className="col-md-6">*/}
-                                    {/*    <label htmlFor="inputUsername" className="form-label">Username</label>*/}
-                                    {/*    <input*/}
-                                    {/*        name='user_name' type="username"*/}
-                                    {/*        id="inputUsername"*/}
-                                    {/*        {...register("user_name", {*/}
-                                    {/*            required: "Username is Required",*/}
-                                    {/*        })}*/}
-                                    {/*        className={`form-control ${errors.user_name && "invalid"}`}*/}
-                                    {/*        onKeyUp={() => {*/}
-                                    {/*            trigger("user_name");*/}
-                                    {/*        }}*/}
-                                    {/*    />*/}
-                                    {/*    {errors.user_name && <small className="text-danger">{errors.user_name.message}</small>}*/}
-                                    {/*</div>*/}
-
+                                    
                                     <div className="col-md-6">
                                         <label htmlFor="inputCountry" className="form-label">Country</label>
                                         <select

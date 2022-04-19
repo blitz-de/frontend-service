@@ -1,6 +1,6 @@
 import React from 'react';
 // import MyGames from '../../User_Management/Profile_Management/Not_Admin/MyGames';
-import Sidebar from '../Sidebar';
+import Sidebar from '../../components/Sidebar';
 
 function Dashboard () {
     return (

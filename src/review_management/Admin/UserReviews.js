@@ -22,13 +22,14 @@ function UserReviews () {
             }, 1000);
         } catch (err) {
             if (err.response) {
-                console.log("if ", err.response)
-                console.log(err.response.status); // 👉️ 404
+                setErrorMessage(err.response);
+                console.clear()
+                // console.log(err.response.status); // 👉️ 404
             } else if (err.message === "Network Error") {
                 console.log("FW ", err.message)
                 setErrorMessage(err.message);
-                // console.clear();
-                alert("🌏 User is supposed to have data to be fetched");
+                console.clear();
+                alert("🌏 There is problem with connection to the network");
             }
         }
     }
@@ -74,10 +75,11 @@ function UserReviews () {
                     }
                 })
         } catch (error){
-            console.log("here is an error: " + error);
-            return(<div>
-                <h1>...Loading</h1>
-            </div>)
+            if (getErrorMessage.status === 404) {
+                return (<div>
+                    <h1>There are no reviews to see</h1>
+                </div>)
+            }
         }
     }
     return (

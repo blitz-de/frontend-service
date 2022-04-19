@@ -14,6 +14,7 @@ export function GoogleButton() {
 
     const handleLogin = async (googleData) => {
         const res = await fetch('http://localhost:8080/users/api/google/', {
+            
             method: 'POST',
             body: JSON.stringify({
                 token: googleData.tokenId,
