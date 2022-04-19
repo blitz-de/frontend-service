@@ -1,139 +1,119 @@
-// import {Link} from 'react-router-dom';
-import {useEffect, useState} from 'react';
+import {useNavigate, Navigate, Link} from 'react-router-dom';
+import {useEffect, useState} from "react";
 import axios from 'axios';
+import {useForm} from 'react-hook-form';
+import axiosInstance from '../axios';
+const baseUrl = 'http://127.0.0.1:8002/api/'
 
-const baseUrl = 'http://127.0.0.1:8000/api'
-function AdminRegister () {
+function AdminLogin () {
 
-    // const [adminData, setAdminData] = useState(null);
-    // setAdminData(){
-    //     'fu'
-    // }
+    let navigate = useNavigate();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        trigger
+    } = useForm();
+    //End
+
+    // Submit Form
+    const onSubmit = userLoginData => {
+        console.log(userLoginData);
+
+        const userFormData = new FormData();
+        userFormData.append("email", userLoginData.email)
+        userFormData.append("password", userLoginData.password)
+
+        try
+        {
+            axios.all([
+                axiosInstance.post(`token/`, userFormData),
+                axios.post(baseUrl+'user/user-login/', userFormData)
+            ])
+                .then(axios.spread((response1, response2) => {
+                    console.log("I am here")
+                    localStorage.setItem('access_token', response1.data.access);
+                    localStorage.setItem('refresh_token', response1.data.refresh);
+                    // Update the axios token, implemented in axios.js
+                    axiosInstance.defaults.headers['Authorization'] =
+                        'JWT ' + localStorage.getItem('access_token');
+
+                    if(response2.data.bool==true){
+                        // navigate('/user-dashboard')
+                        window.location.href='/user-dashboard';
+                        localStorage.setItem('userLoginStatus', true);
+                        if (response2.data.isAdmin==true){
+                            localStorage.setItem('userAdminStatus', true);
+                        }
+
+                        console.log("I am navigation to homepage")
+                    }
+
+                    console.log('response1', response1, 'response2', response2)
+                }));
+        } catch (error){
+            console.log('this is an error')
+            console.log(error);
+        }
+    }
+    // End submit form
+    const userLoginStatus = localStorage.getItem('userLoginStatus');
+    const userAdminStatus = localStorage.getItem('userAdminStatus');
+
     useEffect(()=>{
-        document.title='AdminRegiseter'
+        document.title='User Login';
     });
-    
     return (
         <div className="container mt-4">
             <div className="row">
                 <div className="col-6 offset-3">
-                    <h4 className="text-center mb-4">Tennis Companion Registeration Form</h4>
                     <div className="card">
-                        <h3 className="card-header">Admin Register</h3>
+                        <h3 className="card-header">Admin Login</h3>
                         <div className="card-body">
-                            <form className="row g-3">
-                                <div className="col-md-6">
-                                    <label htmlFor="inputFirstName" className="form-label">First Name</label>
-                                    <input type="text" className="form-control" id="inputFirstName"/>
-                                </div>
-                                <div className="col-md-6">
-                                    <label htmlFor="inputLastName" className="form-label">Last Name</label>
-                                    <input type="text" className="form-control" id="inputLastName"/>
-                                </div>
-                                <div className="col-md-6">
-                                    <label htmlFor="inputEmail4" className="form-label">Email</label>
-                                    <input type="email" className="form-control" id="inputEmail4"/>
-                                </div>
-                                <div className="col-md-6">
-                                    <label htmlFor="inputCountry" className="form-label">Country</label>
-                                    <select id="inputCountry" className="form-select">
-                                        <option selected>Choose...</option>
-                                        <option>...</option>
-                                    </select>
-                                </div>
-                                <div className="col-12">
-                                    <label htmlFor="inputAddress" className="form-label">Address</label>
-                                    <input type="text" className="form-control" id="inputAddress"
-                                           placeholder="1234 Main St"/>
-                                </div>
-                                <div className="col-12">
-                                    <label htmlFor="inputAddress2" className="form-label">Address 2</label>
-                                    <input type="text" className="form-control" id="inputAddress2"
-                                           placeholder="Apartment, studio, or floor"/>
-                                </div>
-                                <div className="col-md-6">
-                                    <label htmlFor="inputMobileNumber" className="form-label">Mobile number</label>
-                                    <input type="text" className="form-control" id="inputMobileNumber"/>
-                                </div>
-                                <div className="col-md-6">
-                                    <label htmlFor="inputZip" className="form-label">Zip</label>
-                                    <input type="text" className="form-control" id="inputZip"/>
-                                </div>
-                                <div className="col-md-6">
-                                    <label htmlFor="inputCity" className="form-label">City</label>
-                                    <input type="text" className="form-control" id="inputCity"/>
-                                </div>
-                                <div className="col-md-6">
-                                    <label htmlFor="inputState" className="form-label">State</label>
-                                    <select id="inputState" className="form-select">
-                                        <option selected>Choose...</option>
-                                        <option>...</option>
-                                    </select>
-                                </div>
-
-                                {/*<div className="col-md-6">*/}
-                                {/*    <label htmlFor="inputGender" className="form-label">Gender</label>*/}
-                                {/*    <input type="text" className="form-control" id="inputGender"/>*/}
-                                {/*</div>*/}
-                                <div className="col-md-4 ">
-                                    <label htmlFor="inputMonth" className="form-label ">Month</label>
-                                    <select id="inputMonth" className="form-select">
-                                        <option hidden>Month...</option>
-                                        <option>...</option>
-                                    </select>
-                                </div>
-                                <div className="col-md-4">
-                                    <label htmlFor="inputDay" className="form-label">Day</label>
-                                    <select id="inputDay" className="form-select">
-                                        <option hidden selected>Day</option>
-                                        <option>...</option>
-                                    </select>                                </div>
-                                <div className="col-md-4">
-                                    <label htmlFor="inputYear" className="form-label">Year</label>
-                                    <select id="inputYear" className="form-select">
-                                        <option hidden>Year...</option>
-                                        <option>...</option>
-                                    </select>                                </div>
-                                <div className="col-md-6">
-                                    <label htmlFor="inputSkillLevel" className="form-label">Skill Level</label>
-                                    <select id="inputSkillLevel" className="form-select">
-                                        <option selected>Choose...</option>
-                                        <option>...</option>
-                                    </select>
-                                </div>
-                                <div className="col-md-6">
-                                    <label htmlFor="inputGameType" className="form-label">Game Type</label>
-                                    <select id="inputGameType" className="form-select">
-                                        <option selected>Choose...</option>
-                                        <option>...</option>
-                                    </select>
-                                </div>
-                                <div className="col-md-6">
-                                    <label htmlFor="inputPassword4" className="form-label">Password</label>
-                                    <input type="password" className="form-control" id="inputPassword4"/>
-                                </div>
-                                <div className="col-md-6">
-                                    <label htmlFor="inputConfirmPassword4" className="form-label">Confirm Password</label>
-                                    <input type="password" className="form-control" id="inputPassword4"/>
-                                </div>
-                                <div className="col-12">
-                                    <div className="form-check">
-                                        <input className="form-check-input" type="checkbox" id="gridCheck"/>
-                                        <label className="form-check-label" htmlFor="gridCheck">
-                                            Check me out
-                                        </label>
+                            <form>
+                                <div className="mb-3">
+                                    <label htmlFor="exampleInputEmail1" className="form-label">Username</label>
+                                    <input type="email" className="form-control" id="exampleInputEmail1"
+                                           aria-describedby="emailHelp"
+                                           {...register("email", {
+                                               required: "Email is Required",
+                                               pattern: {
+                                                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                                   message: "Invalid email address",
+                                               }
+                                           })}
+                                           className={`form-control ${errors.email && "invalid"}`}
+                                           onKeyUp={() => {
+                                               trigger("email");
+                                           }}
+                                    />
+                                    {errors.email && <small className="text-danger">{errors.email.message}</small>}
+                                    <div id="emailHelp" className="form-text">We'll never share your email with
+                                        anyone else.
                                     </div>
                                 </div>
-                                <div className="col-12">
-                                    <button type="submit" className="btn btn-primary">Sign in</button>
+                                <div className="mb-3">
+                                    <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                                    <input type="password" className="form-control" id="exampleInputPassword1"
+                                           {...register("password", {required: "Password is Required"})}
+                                           className={`form-control ${errors.password && "invalid"}`}
+                                           onKeyUp={() => {
+                                               trigger("password");
+                                           }}/>
                                 </div>
+                                <div className="mb-3 form-check">
+                                    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
+                                    <label className="form-check-label" htmlFor="exampleCheck1">Remember me</label>
+                                </div>
+                                <button type="submit" className="btn btn-primary">Login</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
 
-        </div>    )
+        </div>
+    )
 }
 
-export default AdminRegister;
+export default AdminLogin;
