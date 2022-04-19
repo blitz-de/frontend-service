@@ -46,7 +46,7 @@ function AdminLogin () {
                     // Update the axios token, implemented in axios.js
                     axiosInstance.defaults.headers['Authorization'] =
                         'JWT ' + localStorage.getItem('access_token');
-
+                    //bool == true -> signed in
                     if(response2.data.bool==true){
                         // navigate('/user-dashboard')
                         window.location.href='/user-dashboard';

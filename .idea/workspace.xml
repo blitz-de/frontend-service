@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67fc4136-a12a-45f2-8b80-7a0b0e6e3a77" name="Changes" comment="fetching popularusrs, recommended, etc.&#10;fetching registered usrs">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="bf8ee91d-ee86-4e16-b97c-bc506c46ac17" name="Changes" comment="1. fixed problem of authenticated users -&gt;axiosInstance&#10;2. optimized code: AxiosURLGetter.js and UserFetcher.js added&#10;3. feat: added IoIosStar for Rating&#10;4. recommendPlayers use the utils to reduce redundancy">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Admin/AdminDashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/AdminDashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/RegisteredUsers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/RegisteredUsers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Admin/UserReviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Admin/UserReviews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/ChangePassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/ChangePassword.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/MyGames.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/MyGames.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/UserDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/UserDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/User/UserLogout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/User/UserLogout.js" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="16.03version" />
+        <entry key="$PROJECT_DIR$" value="09.04version" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -148,19 +158,9 @@
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/User/UserCategory/PopularUsers.js</url>
-          <line>44</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/components/Main.js</url>
           <line>47</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/User/UserCategory/PopularUsers.js</url>
-          <line>10</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

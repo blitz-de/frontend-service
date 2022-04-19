@@ -1,5 +1,5 @@
 import React from 'react';
-import MyGames from './MyGames';
+// import MyGames from '../../User_Management/Profile_Management/Not_Admin/MyGames';
 import Sidebar from '../Sidebar';
 
 function Dashboard () {
