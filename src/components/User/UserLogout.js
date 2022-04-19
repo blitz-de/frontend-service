@@ -9,7 +9,6 @@ function UserLogout(){
 
     console.log("i am here")
     const userLoginStatus = localStorage.removeItem('userLoginStatus');
-    const usernameStatus = localStorage.removeItem('usernameStatus');
     const userAdminStatus = localStorage.removeItem('userAdminStatus');
 
     let navigate = useNavigate();
@@ -17,7 +16,7 @@ function UserLogout(){
             // console.log("logut fucntion outside of effect");
     useEffect(() => {
         // document.title='User Logout';
-        axiosInstance.post(`logout/blacklist/`, { //user/logout/blacklist/
+        axiosInstance.post(`user/logout/blacklist/`, {
                 refresh_token: localStorage.getItem('refresh_token'),
         });
         // localStorage.removeItem('userLoginStatus')

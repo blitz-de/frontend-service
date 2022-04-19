@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://127.0.0.1:8080/api/';
+const baseURL = 'http://127.0.0.1:8002/api/';
 
 const axiosInstance = axios.create({
     baseURL: baseURL,
@@ -32,7 +32,7 @@ axiosInstance.interceptors.response.use(
 
         if (
             error.response.status === 401 &&
-            originalRequest.url === baseURL + 'token/refresh/' //correct
+            originalRequest.url === baseURL + 'token/refresh/'
         ) {
             window.location.href = '/user-login/';
             return Promise.reject(error);
@@ -49,12 +49,12 @@ axiosInstance.interceptors.response.use(
                 const tokenParts = JSON.parse(atob(refreshToken.split('.')[1]));
 
                 // exp date in token is expressed in seconds, while now() returns milliseconds:
-                const now = Math.ceil(Date.now() / 7200*60*1000); // 5 days
+                const now = Math.ceil(Date.now() / 1000);
                 console.log(tokenParts.exp);
 
                 if (tokenParts.exp > now) {
                     return axiosInstance
-                        .post('token/refresh/', { refresh: refreshToken })
+                        .post('/token/refresh/', { refresh: refreshToken })
                         .then((response) => {
                             localStorage.setItem('access_token', response.data.access);
                             localStorage.setItem('refresh_token', response.data.refresh);

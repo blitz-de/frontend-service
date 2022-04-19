@@ -1,9 +1,9 @@
- import {useNavigate, Navigate, Link} from 'react-router-dom';
- import  React, {useEffect, useState} from 'react';
- import axios from 'axios';
- import {useForm} from 'react-hook-form';
- import axiosInstance from '../axios';
- const baseUrl = 'http://localhost:8080/api/'
+import {useNavigate, Navigate, Link} from 'react-router-dom';
+import  {useEffect, useState} from 'react';
+import axios from 'axios';
+import {useForm} from 'react-hook-form';
+import axiosInstance from '../axios';
+const baseUrl = 'http://127.0.0.1:8002/api/'
 function Login () {
     const [getErrorMessage, setErrorMessage] = useState("");
 
@@ -31,7 +31,7 @@ function Login () {
                 (error) => {
                     if (error.response.status === 401) {
                         setErrorMessage(error.response.status); //Output: 401
-                        console.log("fgigfiasdm", error.response.status)
+                        console.log("fgigfiam", error.response.status)
                     }
 
                     return Promise.reject(error);
@@ -39,47 +39,39 @@ function Login () {
             )
             axios.all([
                 axiosInstance.post(`token/`, userFormData),
-                axios.post(baseUrl+'login/', userFormData)//user/user-login/
+                axios.post(baseUrl+'user/user-login/', userFormData)
 
             ])
-            .then(axios.spread((response1, response2) => {
-                console.log("I am here")
-                console.log(response1.data)
-                localStorage.setItem('access_token', response1.data.access);
-                localStorage.setItem('refresh_token', response1.data.refresh);
-                // Update the axios token, implemented in axios.js
-                axiosInstance.defaults.headers['Authorization'] =
-                    'JWT ' + localStorage.getItem('access_token');
+                .then(axios.spread((response1, response2) => {
+                    console.log("I am here")
+                    localStorage.setItem('access_token', response1.data.access);
+                    localStorage.setItem('refresh_token', response1.data.refresh);
+                    // Update the axios token, implemented in axios.js
+                    axiosInstance.defaults.headers['Authorization'] =
+                        'JWT ' + localStorage.getItem('access_token');
 
-                console.log("jwt ", )
-                // make another request to login? axios.post(baseUrl, userFormData) .then((response) => { if response.data.bool==true)
-                // Navigate to Homepage
-                console.log("authenticated", response2.data.bool)
-                if (response2.data.bool==true){
-                    console.log("hi")
+                    // make another request to login? axios.post(baseUrl, userFormData) .then((response) => { if response.data.bool==true)
+                    // Navigate to Homepage
+                    if(response2.data.bool==true){
+                        // navigate('/user-dashboard')
+                        window.location.href='/user-dashboard';
+                        localStorage.setItem('userLoginStatus', true);
+                        console.log("fafafa",response2.data.isAdmin)
+                        if (response2.data.isAdmin==true){
+                            localStorage.setItem('userAdminStatus', true);
+                        }
+                        else {
+                            localStorage.setItem('userAdminStaus', false);
+                        }
 
-                    // navigate('/user-dashboard')
-                    // window.location.href='/user-dashboard';
-                    localStorage.setItem('userLoginStatus', true);
-                    console.log("username: ", response2.data.username)
-                    localStorage.setItem('usernameStatus', response2.data.username)
-                    console.log("fafafa",response2.data.isAdmin)
-                    if (response2.data.isAdmin==true){
-                        localStorage.setItem('userAdminStatus', true);
+                        console.log("I am navigation to homepage")
                     }
-                    else {
-                        localStorage.setItem('userAdminStaus', false);
-                    }
-
-                    console.log("I am navigation to homepage")
-                }
-                // localStorage.setIte
-                // navigate(`/user-dashboard`);
-                // if(response.data.bool==true){ localStorage.setItem...
-                // console.log(response.data)
-                console.log('response1', response1, 'response2', response2)
-                window.location.href='/user-dashboard';
-            }));
+                    // localStorage.setIte
+                    // navigate(`/user-dashboard`);
+                    // if(response.data.bool==true){ localStorage.setItem...
+                    // console.log(response.data)
+                    console.log('response1', response1, 'response2', response2)
+                }));
         } catch (error){
             console.log('this is an error')
             console.log(error);
@@ -87,7 +79,6 @@ function Login () {
     }
     // End submit form
     const userLoginStatus = localStorage.getItem('userLoginStatus');
-    const userUsernameStatus = localStorage.getItem('usernameStatus');
     const userAdminStatus = localStorage.getItem('userAdminStatus');
 
     useEffect(()=>{
@@ -107,7 +98,7 @@ function Login () {
                         <div className="card-body">
                             {/*<form>*/}
                             <form  onSubmit={handleSubmit(onSubmit)} className="form">
-                            {/*/check if email or password is wrong/*/}
+                                {/*/check if email or password is wrong/*/}
 
                                 {getErrorMessage == '401'
                                     ?
@@ -115,32 +106,32 @@ function Login () {
                                         <svg className="bi flex-shrink-0 me-2" width="24" height="24" role="img"
                                              aria-label="Danger:">
                                             {/*<use xlinkHref="#exclamation-triangle"*/}
-                                                {/*/>*/}
+                                            {/*/>*/}
                                         </svg>
                                         Incorrect username or password.
                                     </div>
                                     :""}
 
                                 <div className="col-md-6">
-                                <label htmlFor="inputEmail4" className="form-label">Email</label>
-                                <input
-                                    name='email' type="email"
-                                    id="inputEmail4"
-                                    {...register("email", {
-                                        required: "Email is Required",
-                                        pattern: {
-                                            value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                            message: "Invalid email address",
-                                        }
-                                    })}
-                                    className={`form-control ${errors.email && "invalid"}`}
-                                    onKeyUp={() => {
-                                        trigger("email");
-                                    }}
-                                />
-                                {errors.email && <small className="text-danger">{errors.email.message}</small>}
+                                    <label htmlFor="inputEmail4" className="form-label">Email</label>
+                                    <input
+                                        name='email' type="email"
+                                        id="inputEmail4"
+                                        {...register("email", {
+                                            required: "Email is Required",
+                                            pattern: {
+                                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                                message: "Invalid email address",
+                                            }
+                                        })}
+                                        className={`form-control ${errors.email && "invalid"}`}
+                                        onKeyUp={() => {
+                                            trigger("email");
+                                        }}
+                                    />
+                                    {errors.email && <small className="text-danger">{errors.email.message}</small>}
 
-                            </div>
+                                </div>
                                 {/**/}
                                 <div className="col-md-6 mb-3">
                                     <label htmlFor="inputPassword4" className="form-label">Password</label>
@@ -154,8 +145,7 @@ function Login () {
                                             trigger("password");
                                         }}/>
                                 </div>
-                                <button type="submit" className="btn btn-primary ">Login</button>
-                                <button type="submit" className="btn btn-primary">Login using Google</button>
+                                <button type="submit" className="btn btn-primary">Login</button>
                             </form>
                         </div>
                     </div>
