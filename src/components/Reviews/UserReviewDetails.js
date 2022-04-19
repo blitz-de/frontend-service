@@ -1,21 +1,22 @@
 import React , {useEffect, useState} from "react";
 import {Link, useParams} from 'react-router-dom';
 import Search from '../Search';
-import AdminSidebar from './AdminSidebar';
+import AdminSidebar from '../Admin/AdminSidebar';
 import axios from 'axios';
-
+import {IoIosStar, IoIosStarOutline } from 'react-icons/io';
 const baseUrl = 'http://localhost:8080/reviews/api'
 // TODO: Delete the REVIEWS CLASS IF NOT NEEDED
-function UserReviews () {
+function UserReviewDetails () {
 
     const [getUsersState, setUsersState] = useState("");
     const [getErrorMessage, setErrorMessage] = useState("");
-    const {username} = useParams()
+    const {pkid, username} = useParams()
 
     async function makeRequest() {
         try{
-            const response = await  axios.get(baseUrl+'/v1/ratings/users-ratings/'+username+'/');
+            const response = await  axios.get(baseUrl+'/v1/ratings/ratings/'+pkid);
             console.log(response.data);
+            console.log("!!!!!!!!2 ", getUsersState.comment)
             setTimeout(() => {
                 setUsersState(response.data)
                 console.log("get localStorage info: ", localStorage.getItem('userAdminStatus'))
@@ -35,43 +36,35 @@ function UserReviews () {
     }, []);
 
     function renderTableData() {
-
         try {
-            if (getUsersState.users.filter(i => i.rater === username))
-                return getUsersState.users?.map((user, index) => {
-                    if (user.rater != username || getErrorMessage==="Network Error") {
-                        return (
-                            <div>
-                                <h1>User doesn't have any rated users</h1>
-                            </div>
-                        )
-                    } else {
-                        return (
-                            <tr key={index}>
-                                <td> {user.rater}
-                                </td>
-                                <td key={index}><Link to="/detail/:user_id">
-                                    {user.rated_user}
-                                </Link></td>
-                                <td key={index}><Link to="/detail/:user_id">
-                                    {user.created_at}
-                                </Link></td>
-                                <td className="col-md-2 ms-auto">
-                                    <Link to={"user-reviews-details/"+user.pkid}>
-                                        <button className="btn btn-outline-success btn-sm">
-                                            Reviews
-                                        </button>
-                                    </Link>
-                                    <Link to="/">
-                                        <button className="btn btn-outline-danger btn-sm float-end">
-                                            Delete
-                                        </button>
-                                    </Link>
-                                </td>
-                            </tr>
-                        );
-                    }
-                })
+            console.log("inside render ", getUsersState.pkid, " sss ", pkid)
+            if (getUsersState.pkid == pkid){
+                if (getUsersState.pkid != pkid || getErrorMessage==="Network Error") {
+                    return (
+                        <div>
+                            <h1>User doesn't have any rated users</h1>
+                        </div>
+                    )
+                } else {
+                    return (
+                        <tr>
+                            <td> {getUsersState.pkid}
+                            </td>
+                            <td> {getUsersState.comment}
+                            </td>
+                            <td>
+                                <div style={{color: "orange"}}>
+                                    {(getUsersState.rating>=1)?<IoIosStar />:(<IoIosStarOutline />)}
+                                    {(getUsersState.rating>=2)?(<IoIosStar />):(<IoIosStarOutline />)}
+                                    {(getUsersState.rating>=3)?(<IoIosStar />):(<IoIosStarOutline />)}
+                                    {(getUsersState.rating>=4)?(<IoIosStar />):(<IoIosStarOutline />)}
+                                    {(getUsersState.rating>=5)?(<IoIosStar />):(<IoIosStarOutline />)}
+                                </div>
+                            </td>
+                        </tr>
+                    );
+                }
+            }
         } catch (error){
             console.log("here is an error: " + error);
             return(<div>
@@ -95,17 +88,16 @@ function UserReviews () {
                             <div className="card-body">
                                 <table className="table table-bordered">
                                     <thead>
-                                    <th>Review ID {username}</th>
-                                    <th>User Reviewed</th>
-                                    <th>Created at</th>
+                                    <th>Review ID</th>
+                                    <th>Comment</th>
+                                    <th>Rating</th>
                                     <th>Action</th>
                                     </thead>
                                     <tbody>
                                     {/*(getUserStatus.)*/}
                                     {(getErrorMessage==="Network Error")?
-                                        <h1 className='text'>{username+" didn't rate anyone"}</h1>
+                                        <h1 className='text'>{pkid+" didn't rate anyone " +username}</h1>
                                         :renderTableData()}
-
 
                                     </tbody>
                                 </table>
@@ -120,4 +112,4 @@ function UserReviews () {
     );
 }
 
-export default UserReviews;
+export default UserReviewDetails;

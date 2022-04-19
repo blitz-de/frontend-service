@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import {IoIosStar, IoIosStarOutline } from 'react-icons/io';
 
 const baseUrl = 'http://localhost:8080/api'
 
@@ -19,7 +20,7 @@ function PopularUsers() {
                 setTimeout(() => {
                     setUsersState(response.data)
                     setResponseLength(Object.keys(response.data).length)
-                    // console.log("gsssafsogh", getUsersState)
+
                     // console.log("Data length: ", getResponseLength).
                 }, 1000);
             });
@@ -38,12 +39,20 @@ function PopularUsers() {
                     <div className="card">
                         <Link to="#"><img src={'http://localhost:8080'+getUsersState[index].profile_photo} className="card-img-top" alt="..." /></Link>
                         <div  className="card-body">
-                            <h5  className="card-tile">Here I am
-                                {getResponseLength} {getUsersState[index].first_name}<Link to="##">{getUsersState[index].first_name} {getUsersState[index].last_name}</Link></h5>
+                            <h5  className="card-tile">Here I am {getUsersState[index].rating}
+                                {getUsersState[index].first_name}<Link to="##">{getUsersState[index].first_name} {getUsersState[index].last_name}</Link></h5>
                         </div>
                         <div  className='card-footer'>
                             <div className="title">
-                                <span>Rating: {getUsersState[index].rating}</span>
+                                <span>Rating:
+                                    <div style={{color: "orange"}}>
+                                        {(getUsersState[index].rating>=1)?<IoIosStar />:(<IoIosStarOutline />)}
+                                        {(getUsersState[index].rating>=2)?(<IoIosStar />):(<IoIosStarOutline />)}
+                                        {(getUsersState[index].rating>=3)?(<IoIosStar />):(<IoIosStarOutline />)}
+                                        {(getUsersState[index].rating>=4)?(<IoIosStar />):(<IoIosStarOutline />)}
+                                        {(getUsersState[index].rating>=5)?(<IoIosStar />):(<IoIosStarOutline />)}
+                                    </div>
+                                </span>
                                 <span className="float-end">Views: 1000</span>
 
                             </div>
@@ -62,53 +71,7 @@ function PopularUsers() {
                 Popular Tennis players</h3>
             <div className="row">
                 {renderProfileData()}
-                {/*<div className="col-md-4">*/}
-                {/*    <div className="card">*/}
-                {/*        <Link to="#"><img src="logo512.png" className="card-img-top" alt="..." /></Link>*/}
-                {/*        <div className="card-body">*/}
-                {/*            <h5 className="card-tile"><Link to="#">Tennis Game</Link></h5>*/}
-                {/*        </div>*/}
-                {/*        /!*TODO: fetch rating and make icons instead of numbers*!/*/}
-                {/*        <div className='card-footer'>*/}
-                {/*            <div className="title">*/}
-                {/*                <span>Rating: 3.4/5</span>*/}
-                {/*                <span className="float-end">Views: 1000</span>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
 
-                {/*<div className="col-md-4">*/}
-                {/*    <div className="card">*/}
-                {/*        <Link to="#"><img src="logo512.png" className="card-img-top" alt="..." /></Link>*/}
-                {/*        <div className="card-body">*/}
-                {/*            <h5 className="card-tile"><Link to="#">Football</Link></h5>*/}
-                {/*        </div>*/}
-                {/*        /!*TODO: fetch rating and make icons instead of numbers*!/*/}
-                {/*        <div className='card-footer'>*/}
-                {/*            <div className="title">*/}
-                {/*                <span>Rating: 3.4/5</span>*/}
-                {/*                <span className="float-end">Views: 1000</span>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
-
-                {/*<div className="col-md-4">*/}
-                {/*    <div className="card">*/}
-                {/*        <Link to="#"><img src="logo512.png" className="card-img-top" alt="..." /></Link>*/}
-                {/*        <div className="card-body">*/}
-                {/*            <h5 className="card-tile"><Link to="#">Basketball</Link></h5>*/}
-                {/*        </div>*/}
-                {/*        /!*TODO: fetch rating and make icons instead of numbers*!/*/}
-                {/*        <div className='card-footer'>*/}
-                {/*            <div className="title">*/}
-                {/*                <span>Rating: 3.4/5</span>*/}
-                {/*                <span className="float-end">Views: 1000</span>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
 
             </div>
             {/*End popular Tennis players*/}
