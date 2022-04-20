@@ -31,7 +31,6 @@ const Register = () => {
         userFormData.append("last_name", userData.last_name)
         userFormData.append("username", userData.username)
         userFormData.append("email", userData.email)
-        console.log("!!!!!!!!!!!!!!!!!!!!!!!! ", userData.country)
         userFormData.append("country", userData.country)
         userFormData.append("address", userData.address)
         userFormData.append("address_2", userData.address_2)
@@ -47,15 +46,10 @@ const Register = () => {
         userFormData.append("gender", userData.gender)
         console.log(userFormData.getAll("skill_level"))
         try {
-            // axios.post(baseUrl, userFormData).then((response) => {
             axiosInstance.post(baseUrl+endpoint, userFormData).then((response) => {
-                // history.push('/login');
                 console.log(response.data)
-                console.log("fwwwfw")
-                // setSuccessInf({
-                //     'status': 'skuccess'
-                // });
-                });
+                window.location.href='/user-login';
+            });
 
         } catch (error) {
             console.log("wrwrtw")
@@ -85,9 +79,7 @@ const Register = () => {
                     {/*{status=='error' && <p className="text-danger">Something wrong happened</p>}*/}
                     <h4 className="text-center mb-4">Tennis Companion Registeration Form</h4>
                     {/*added a form -- neeeds to be rechecked*/}
-                    {/*<form onSubmit={handleSubmit} className="form">*/}
-                    {/*{success.status && <p class="text-success">Thanks for your registeration</p>}*/}
-                    {/*{!success.status && <p class="text-danger">Something wrong happened!!</p>}*/}
+
                         <div className="card">
                             <h3 className="card-header">User Register</h3>
                             <div className="card-body">
@@ -320,11 +312,23 @@ const Register = () => {
                                                placeholder="Enter your password" type="password"
                                                id="inputPassword4"
                                                name='password'
-                                               {...register("password", {required: "Password is Required"})}
+                                               {...register("password", {
+                                                   required: "Password is Required",
+                                                   minLength: {
+                                                       value: 8,
+                                                       message: "Minimum length of password should be 8 characters"
+                                                   },
+                                                   pattern: {
+                                                       value: /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
+                                                       message: "Password must contain an uppercase, lowercase and a special character"
+                                                   }
+                                               })}
                                                className={`form-control ${errors.password && "invalid"}`}
                                                onKeyUp={() => {
                                                    trigger("password");
                                                }}/>
+                                        {errors.password && (<small className="text-danger">{errors.password.message}</small>)}
+
                                     </div>
                                     <div className="col-md-6">
                                         <label htmlFor="inputConfirmPassword4" className="form-label">Confirm Password</label>
