@@ -16,7 +16,7 @@ export function GoogleButton() {
         const res = await fetch('http://localhost:8080/users/api/google/', {
             method: 'POST',
             body: JSON.stringify({
-                token: googleData.tokenId,
+                token: googleData.tokenId.trim(),
             }),
             headers: {
                 'Content-Type': 'application/json',

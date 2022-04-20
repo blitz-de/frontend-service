@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import "../../components/User/styles/RegisterStyles.css";
+import "../components/styles/RegisterStyles.css";
 import { Country, State, City }  from 'country-state-city';
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
