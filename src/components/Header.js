@@ -1,10 +1,27 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 // import MyProfile from '../User_Management/Profile_Management/Not_Admin/MyProfile';
+import axiosInstance from './axios'
+import { GoogleLogout} from 'react-google-login';
 
 function Header() {
     const userLoginStatus = localStorage.getItem('userLoginStatus');
     const userAdminStatus = localStorage.getItem('userAdminStatus');
+    const onSignoutSuccess = () => {
+
+        console.log("##### onSignoutSuccesS: ", localStorage.getItem('refresh_token'))
+        axiosInstance.post(`/logout/blacklist/`, {
+
+            refresh_token: localStorage.getItem('refresh_token'),
+        });
+        localStorage.removeItem('loginData');
+        localStorage.removeItem('googleLoginStatus');
+        localStorage.removeItem('refresh_token');
+        localStorage.removeItem('access_token');
+        alert("You've been signed out successfully");
+        window.location.href = 'user-login';
+
+    }
     return (
         <nav className="navbar navbar-expand-lg navbar-light" style={{backgroundColor: "#E8EBDA"}} >
             <div className="container-fluid">
@@ -36,11 +53,19 @@ function Header() {
                                         <li><hr className="dropdown-divider" /></li>
                                         {/*if userLoginStatus == true -> show Dashboard and Logout*/}
                                         {/*if userLoginStatus == true previous ==-> show Dashboard and Logout*/}
-                                        {userLoginStatus === 'true' &&
+                                        {(userLoginStatus === 'true'|| localStorage.getItem('googleLoginStatus')==='true')&&
                                             <>
                                                 <li><Link className="dropdown-item" to="/user-dashboard">Dashboard</Link></li>
-                                                <li><Link className="dropdown-item" to="/user-logout">Logout</Link></li>
-                                                
+                                                { userLoginStatus === 'true'?
+                                                    <li><Link className="dropdown-item" to="/user-logout">Logout</Link>
+                                                    </li>:
+                                                    <GoogleLogout
+                                                        clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                                                        buttonText="Logout"
+                                                        onLogoutSuccess={onSignoutSuccess}
+                                                    >
+                                                    </GoogleLogout>
+                                                }
                                                 <li className="dropdown-item">
                                                     <Link className="nav-link" to="/profile-settings">
                                                         <i className="bi bi-gear-fill"></i>

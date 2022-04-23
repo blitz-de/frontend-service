@@ -52,12 +52,7 @@ const Register = () => {
             });
 
         } catch (error) {
-            console.log("wrwrtw")
 
-            console.log(userFormData + "hola");
-            // ReactDOM.render(myelement, document.getElementById('root'));
-            console.log("wrwrtw")
-            // setSuccessInfo('status': 'error')
             console.log("here is an error: " + error);
         }
     }

@@ -12,7 +12,7 @@ function Sidebar() {
                 <Link to="/favorite-players" className="list-group-item list-group-item-action">Favorite players</Link>
                 <Link to="/recommended-players" className="list-group-item list-group-item-action">Recommended players</Link>
                 <Link to="/change-password" className="list-group-item list-group-item-action">Change password</Link>
-                <Link to="/logout" className="list-group-item list-group-item-action text-danger">Logout</Link>
+                <Link to="/user-logout" className="list-group-item list-group-item-action text-danger">Logout</Link>
             </div>
         </div>
 
