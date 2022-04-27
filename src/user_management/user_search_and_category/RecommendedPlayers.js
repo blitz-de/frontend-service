@@ -15,7 +15,6 @@ function RecommendedPlayers () {
     const [getErrorMessage, setErrorMessage] = useState("");
 
     const [getUsersState, setUsersState] = useState("");
-    // const [getResponseLength, setResponseLength] = useState(0);
 
     useEffect(() => {
         if (userLoginStatus == 'true' || googleLoginStatus === 'true'){

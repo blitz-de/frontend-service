@@ -15,16 +15,13 @@ function UserReviews () {
     async function makeRequest() {
         try{
             const response = await  axios.get(baseUrl+'/users-ratings/'+username+'/');
-            console.log(response.data);
             setTimeout(() => {
                 setUsersState(response.data)
-                console.log("get localStorage info: ", localStorage.getItem('userAdminStatus'))
             }, 1000);
         } catch (err) {
             if (err.response) {
                 setErrorMessage(err.response);
                 console.clear()
-                // console.log(err.response.status); // 👉️ 404
             } else if (err.message === "Network Error") {
                 console.log("FW ", err.message)
                 setErrorMessage(err.message);
@@ -52,10 +49,10 @@ function UserReviews () {
                             <tr key={index}>
                                 <td> {user.rater}
                                 </td>
-                                <td key={index}><Link to="/detail/:user_id">
+                                <td ><Link to="/detail/:user_id">
                                     {user.rated_user}
                                 </Link></td>
-                                <td key={index}><Link to="/detail/:user_id">
+                                <td ><Link to="/detail/:user_id">
                                     {user.created_at}
                                 </Link></td>
                                 <td className="col-md-2 ms-auto">

@@ -42,7 +42,7 @@ function Home() {
                     <div className="carousel-item active">
                         <figure className="text-center">
                             <blockquote className="blockquote">
-                                <p>A well-known quote, contained in a blockquote element.</p>
+                                <p>With Tennis Companion you will never play alone again!</p>
                             </blockquote>
                             <figcaption className="blockquote-footer">
                                 Someone famous in <cite title="Source Title">Source Title</cite>
@@ -52,7 +52,7 @@ function Home() {
                     <div className="carousel-item">
                         <figure className="text-center">
                             <blockquote className="blockquote">
-                                <p>A well-known quote, contained in a blockquote element.</p>
+                                <p>It was easy and forward to find another Tennis player. It's the best website ever.</p>
                             </blockquote>
                             <figcaption className="blockquote-footer">
                                 Someone famous in <cite title="Source Title">Source Title</cite>
@@ -62,7 +62,7 @@ function Home() {
                     <div className="carousel-item">
                         <figure className="text-center">
                             <blockquote className="blockquote">
-                                <p>A well-known quote, contained in a blockquote element.</p>
+                                <p>The efficiency and simplicity of the website is what makes it spectacular.</p>
                             </blockquote>
                             <figcaption className="blockquote-footer">
                                 Someone famous in <cite title="Source Title">Source Title</cite>

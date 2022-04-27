@@ -11,6 +11,7 @@ export function GoogleButton() {
         try{
             await axiosInstance.post('http://localhost:8080/users/api/google/', body).then((response) =>{
                 console.log(response.data)
+                localStorage.setItem('userLoginStatus', true);
                 localStorage.setItem('googleLoginStatus', true);
                 //------------
                 localStorage.setItem('access_token', response.data.access_token);

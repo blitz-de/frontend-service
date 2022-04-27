@@ -15,14 +15,14 @@ function RegisteredUsers() {
     const userLoginStatus = localStorage.getItem('userLoginStatus');
     const userAdminStatus = localStorage.getItem('userAdminStatus');
 
-
-    console.log("im")
     useEffect(()=>{
 
         if (userLoginStatus == 'true' && userAdminStatus == 'true'){
             authTennisCompanionGetter(endpoint, getUsersState,setUsersState,
                 getErrorMessage, setErrorMessage);
         }
+        console.clear();
+
     }, []);
 
     function renderTableData() {
@@ -47,11 +47,6 @@ function RegisteredUsers() {
         })
     }
 
-        //   {Country.getAllCountries()
-        //       .map((country, index) =>
-        //           <option key={index}>{country.name}
-        //           </option>
-        // )}
     return (
         <div>
             <Search />

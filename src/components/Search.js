@@ -9,11 +9,29 @@ const endpoint = '/users/api/registered-users/';
 // TODO: Add a filter panel
 function Search() {
 
-    const [filter, setFilter] = useState('');
+    // const [filter, setFilter] = useState('');
+    const [searchInput, setSearchInput] = useState('');
+    const [filteredResults, setFilteredResults] = useState([]);
+
+    const [getUsersState, setUsersState] = useState("");
+    const [getErrorMessage, setErrorMessage] = useState("");
+
+    useEffect(()=>{
+        tennisCompanionGetter(endpoint, getUsersState,setUsersState,
+            getErrorMessage, setErrorMessage);
+    }, []);
 
     const searchText = (event) => {
-        setFilter(event.target.value);
-        console.log("#######", event.target.value)
+        setSearchInput(event.target.value);
+
+        const filteredData = getUsersState['users'].filter((item) => {
+            return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
+        })
+        console.log(event.target.value)
+    }
+
+    const searchItems = (searchValue) => {
+        setSearchInput(searchValue)
 
     }
     return (
@@ -24,7 +42,7 @@ function Search() {
                         <input className="form-control-lg me-2 col-md-12 col-"
                                type="search" placeholder="Search"
                                aria-label="Search"
-                               value={filter}
+                               value={searchInput}
                                onChange={searchText.bind(this)}
                         />
                             <button className="btn btn-outline-success" type="submit">Search</button>
