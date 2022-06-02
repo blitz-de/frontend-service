@@ -12,6 +12,9 @@ const baseUrl = 'http://localhost:8080/users/api/'
 
 function Login () {
     const [getErrorMessage, setErrorMessage] = useState("");
+    const userLoginStatus = localStorage.getItem('userLoginStatus');
+    const userUsernameStatus = localStorage.getItem('usernameStatus');
+    const userAdminStatus = localStorage.getItem('userAdminStatus');
 
     let navigate = useNavigate();
     const {
@@ -50,11 +53,10 @@ function Login () {
             ])
                 .then(axios.spread((response1, response2) => {
                     if (response2.status === 404){
-                        console.log("fwfwf ", response2, "empty")
+                        console.log(response2, "empty")
                     }
                     // if (error.response2.status === 404){
-                    //     console.log("fwfwf ", response2, "empty error")
-                    // }
+
                     console.log("I am here")
                     console.log(response1.data)
                     localStorage.setItem('access_token', response1.data.access);
@@ -70,8 +72,7 @@ function Login () {
                     if (response2.data.bool==true){
                         console.log("hi")
 
-                        // navigate('/user-dashboard')
-                        // window.location.href='/user-dashboard';
+
                         localStorage.setItem('userLoginStatus', true);
                         console.log("username: ", response2.data.username)
                         localStorage.setItem('usernameStatus', response2.data.username)
@@ -85,10 +86,7 @@ function Login () {
 
                         console.log("I am navigation to homepage")
                     }
-                    // localStorage.setIte
-                    // navigate(`/user-dashboard`);
-                    // if(response.data.bool==true){ localStorage.setItem...
-                    // console.log(response.data)
+
                     console.log('response1', response1, 'response2', response2)
                     window.location.href='/user-dashboard';
                 }));
@@ -98,18 +96,12 @@ function Login () {
         }
     }
     // End submit form
-    const userLoginStatus = localStorage.getItem('userLoginStatus');
-    const userUsernameStatus = localStorage.getItem('usernameStatus');
-    const userAdminStatus = localStorage.getItem('userAdminStatus');
 
     useEffect(()=>{
         document.title='User Login';
     });
 
-    // if(userLoginStatus=='true'){
-    //     // window.location.href='/user-dashboard'
-    //     // navigate('/user-dashboard');
-    // }
+
     return (
         <div className="container mt-4">
             <div className="row">
@@ -139,7 +131,7 @@ function Login () {
                                         name='email' type="email"
                                         id="inputEmail4"
                                         {...register("email", {
-                                            required: "Email is Required",
+                                            // required: "Email is Required",
                                             pattern: {
                                                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                                                 message: "Invalid email address",
@@ -160,7 +152,9 @@ function Login () {
                                         placeholder="Enter your password" type="password"
                                         id="inputPassword4"
                                         name='password'
-                                        {...register("password", {required: "Password is Required"})}
+                                        {...register("password", {
+                                            // required: "Password is Required"
+                                        })}
                                         className={`form-control ${errors.password && "invalid"}`}
                                         onKeyUp={() => {
                                             trigger("password");

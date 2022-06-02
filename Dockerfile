@@ -12,6 +12,7 @@ COPY package-lock.json ./
 RUN npm install
 
 RUN npm install react-icons --save
+RUN npm i react-google-login
 
 # add app
 COPY . ./

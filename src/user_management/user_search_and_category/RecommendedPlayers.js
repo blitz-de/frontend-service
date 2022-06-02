@@ -11,13 +11,13 @@ const endpoint = '/users/api/recommended-players/';
 function RecommendedPlayers () {
     
     const userLoginStatus = localStorage.getItem('userLoginStatus');
+    const googleLoginStatus = localStorage.getItem('googleLoginStatus');
     const [getErrorMessage, setErrorMessage] = useState("");
 
     const [getUsersState, setUsersState] = useState("");
-    // const [getResponseLength, setResponseLength] = useState(0);
 
     useEffect(() => {
-        if (userLoginStatus == 'true'){
+        if (userLoginStatus == 'true' || googleLoginStatus === 'true'){
             authTennisCompanionGetter(endpoint, getUsersState,setUsersState,
                 getErrorMessage, setErrorMessage);
         }
@@ -25,7 +25,7 @@ function RecommendedPlayers () {
 
     return(
         <div className="container mb-4">
-            {userLoginStatus == 'true' &&
+            {(userLoginStatus === 'true' || googleLoginStatus === 'true') &&
                 <>
                     {/*start Recommended Players*/}
                     <h3 className="pb-2 mb-4 mt-5">

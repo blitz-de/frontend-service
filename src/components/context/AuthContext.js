@@ -30,7 +30,7 @@ export const AuthProvider = ({children}) => {
                     localStorage.setItem('userLoginStatus', true)
                     window.location.href='/user-dashboard';
                 }
-                console.log(response.data)
+                // console.log(response.data)
             });
         } catch (error){
             console.log(error);

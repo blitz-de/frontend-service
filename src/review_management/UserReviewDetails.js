@@ -15,11 +15,8 @@ function UserReviewDetails () {
     async function makeRequest() {
         try{
             const response = await  axios.get(baseUrl+'/ratings/'+pkid);
-            console.log(response.data);
-            console.log("!!!!!!!!2 ", getUsersState.comment)
             setTimeout(() => {
                 setUsersState(response.data)
-                console.log("get localStorage info: ", localStorage.getItem('userAdminStatus'))
             }, 1000);
         } catch (err) {
             if (err.response.status === 404) {
@@ -38,7 +35,6 @@ function UserReviewDetails () {
 
     function renderTableData() {
         try {
-            console.log("inside render ", getUsersState.pkid, " sss ", pkid)
             if (getUsersState.pkid == pkid){
                 if (getUsersState.pkid != pkid || getErrorMessage==="Network Error") {
                     return (

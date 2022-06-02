@@ -10,7 +10,7 @@ function AdminSidebar() {
                 <Link to="/all-registered-users" className="list-group-item list-group-item-action">Users of Tennis Companion</Link>
                 {/*<Link to="/my-games" className="list-group-item list-group-item-action">Reviews of Tennis Companion</Link>*/}
                 <Link to="/change-password" className="list-group-item list-group-item-action">Change password</Link>
-                <Link to="/logout" className="list-group-item list-group-item-action text-danger">Logout</Link>
+                <Link to="/user-logout" className="list-group-item list-group-item-action text-danger">Logout</Link>
             </div>
         </div>
 

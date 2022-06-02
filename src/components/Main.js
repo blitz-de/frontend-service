@@ -57,10 +57,10 @@ function Main() {
                 {/*// User*/}
                 <Route path="/" element={<Home />} />
                 {/*protected Routes*/}
-                <Route element={<RequireAuth />}>
-                    <Route path="/about" element={<About />} />
-                </Route>
-                <Route path="/detail/:id" element={<UserDetail />} />
+                {/*<Route element={<RequireAuth />}>*/}
+                <Route path="/about" element={<About />} />
+                {/*</Route>*/}
+                <Route path="/detail/:username" element={<UserDetail />} />
                 <Route path="/user-login" element={<Login />} />
                 <Route path="/user-logout" element={<UserLogout />} />
                 <Route path="/user-register" element={<Register />} />
@@ -72,7 +72,7 @@ function Main() {
                     </PrivateRoute>
                 } />
                 <Route path="/my-games" element={<MyGames />} />
-                <Route path="/my-profile" element={<MyProfile />} />
+                <Route path="/my-profile/:username" element={<MyProfile />} />
                 <Route path="/favorite-players" element={<FavoritePlayers />} />
                 <Route path="/recommended-players" element={<RecommendedPlayers />} />
                 <Route path="/profile-settings" element={<ProfileSettings />} />

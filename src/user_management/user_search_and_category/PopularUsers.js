@@ -13,7 +13,6 @@ function PopularUsers() {
     const [getErrorMessage, setErrorMessage] = useState("");
 
     useEffect(()=>{
-        console.log("imm popp")
         tennisCompanionGetter(endpoint, getUsersState,setUsersState,
             getErrorMessage, setErrorMessage);
     }, []);

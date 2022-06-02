@@ -11,7 +11,7 @@ const authTennisCompanionGetter = async (endpoint,
                                             setErrorMessage) =>{
     try{
         const response = await  axiosInstance.get(baseUrl+endpoint);
-        console.log(response.data);
+        // console.log(response.data);
         setTimeout(() => {
             setUsersState(response.data)
         }, 1000);
